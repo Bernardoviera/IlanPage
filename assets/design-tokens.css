@@ -1,0 +1,44 @@
+:root {
+  /* Primary — Vinho Dýnami */
+  --color-primary: #5C1A21;
+  --color-primary-dark: #3D1116;
+
+  /* Secondary — Dourado Quente */
+  --color-secondary: #C9A227;
+  --color-secondary-light: #E4C766;
+
+  /* Accent — Verde Serra */
+  --color-accent: #3A4A34;
+
+  /* Neutrals */
+  --color-bg: #F5F1E8;
+  --color-surface: #EAE3D3;
+  --color-text-primary: #211A16;
+  --color-text-secondary: #6B6055;
+  --color-border: #DCD3C0;
+
+  /* Semantic */
+  --color-success: #4C6B4F;
+  --color-warning: #B5842A;
+  --color-error: #8C2F26;
+  --color-info: #5C1A21;
+
+  /* Typography */
+  --font-heading: 'Fraunces', Georgia, serif;
+  --font-body: 'Inter', system-ui, -apple-system, sans-serif;
+
+  /* Spacing */
+  --space-xs: 4px;
+  --space-sm: 8px;
+  --space-md: 16px;
+  --space-lg: 24px;
+  --space-xl: 40px;
+  --space-2xl: 80px;
+
+  /* Radius */
+  --radius-button: 4px;
+  --radius-card: 8px;
+  --radius-input: 4px;
+  --radius-modal: 8px;
+  --radius-pill: 9999px;
+}

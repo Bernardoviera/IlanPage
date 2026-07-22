@@ -1,0 +1,133 @@
+{
+  "brand": "Empório Dýnami",
+  "primitive": {
+    "color": {
+      "primary": {
+        "50": {
+          "$value": "#FFFFFF",
+          "$type": "color"
+        },
+        "100": {
+          "$value": "#FFE6ED",
+          "$type": "color"
+        },
+        "200": {
+          "$value": "#F5B3BA",
+          "$type": "color"
+        },
+        "300": {
+          "$value": "#C28087",
+          "$type": "color"
+        },
+        "400": {
+          "$value": "#8F4D54",
+          "$type": "color"
+        },
+        "500": {
+          "$value": "#5C1A21",
+          "$type": "color"
+        },
+        "600": {
+          "$value": "#360000",
+          "$type": "color"
+        },
+        "700": {
+          "$value": "#100000",
+          "$type": "color"
+        },
+        "800": {
+          "$value": "#000000",
+          "$type": "color"
+        },
+        "900": {
+          "$value": "#000000",
+          "$type": "color"
+        }
+      },
+      "secondary": {
+        "50": {
+          "$value": "#FFFFFF",
+          "$type": "color"
+        },
+        "100": {
+          "$value": "#FFFFF3",
+          "$type": "color"
+        },
+        "200": {
+          "$value": "#FFFFC0",
+          "$type": "color"
+        },
+        "300": {
+          "$value": "#FFFF8D",
+          "$type": "color"
+        },
+        "400": {
+          "$value": "#FCD55A",
+          "$type": "color"
+        },
+        "500": {
+          "$value": "#C9A227",
+          "$type": "color"
+        },
+        "600": {
+          "$value": "#A37C01",
+          "$type": "color"
+        },
+        "700": {
+          "$value": "#7D5600",
+          "$type": "color"
+        },
+        "800": {
+          "$value": "#562F00",
+          "$type": "color"
+        },
+        "900": {
+          "$value": "#300900",
+          "$type": "color"
+        }
+      },
+      "accent": {
+        "50": {
+          "$value": "#FFFFFF",
+          "$type": "color"
+        },
+        "100": {
+          "$value": "#FFFFFF",
+          "$type": "color"
+        },
+        "200": {
+          "$value": "#D3E3CD",
+          "$type": "color"
+        },
+        "300": {
+          "$value": "#A0B09A",
+          "$type": "color"
+        },
+        "400": {
+          "$value": "#6D7D67",
+          "$type": "color"
+        },
+        "500": {
+          "$value": "#3A4A34",
+          "$type": "color"
+        },
+        "600": {
+          "$value": "#14240E",
+          "$type": "color"
+        },
+        "700": {
+          "$value": "#000000",
+          "$type": "color"
+        },
+        "800": {
+          "$value": "#000000",
+          "$type": "color"
+        },
+        "900": {
+          "$value": "#000000",
+          "$type": "color"
+        }
+      }
+    }
+  }
+}
