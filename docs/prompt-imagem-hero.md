@@ -27,15 +27,22 @@ Same shot, reframed as a vertical 9:16 composition: the hand and wine glass cent
 
 ---
 
-## Depois de gerar a imagem: prompt para a IA de animação
+## Prompt de animação (imagem → vídeo)
 
-Ao mandar a imagem gerada para a ferramenta de animação (Runway, Pika, Kling, etc.), use algo como:
+A imagem gerada tem o vinho num respingo dramático, congelado no meio do movimento. Para a animação, o pedido é diferente do respingo: um giro circular contínuo e bem suave, como se a mão estivesse girando a taça devagar num movimento de decantação — não uma onda batendo.
 
 ```
-Animate this image as a subtle, seamless looping cinemagraph. Only the wine inside the glass should move — a slow, gentle swirl, as if the hand just started swirling it. The hand and glass stay completely still, no distortion of fingers or glass shape. Camera is static, no zoom, no pan. Loop should be smooth with no visible jump cut. Subtle, elegant, slow motion — not fast or dramatic.
+Animate the wine inside the glass with a slow, smooth, continuous circular swirling motion, as if the hand is gently rotating the glass — the wine flows around the inside wall of the bowl in a steady circular current, like swirling a glass to release aroma. Motion should be gentle and fluid, not splashing or crashing. The hand, fingers, glass shape, and background stay completely static and unchanged — zero distortion. Camera is locked, no zoom, no pan, no shake. The animation should loop seamlessly, with the wine's circular motion continuing smoothly from the last frame back to the first with no visible jump or reset. Slow, elegant, minimal motion — cinemagraph style, not a fast or dramatic pour.
 ```
 
-**Ponto de atenção:** ferramentas de animação por IA costumam distorcer mãos e dedos. Se isso acontecer, peça explicitamente na re-geração: "keep the hand and fingers completely unchanged, animate only the liquid inside the glass."
+**Se a ferramenta permitir "negative prompt" ou "avoid":**
+```
+No splashing, no spilling, no liquid rising above the rim, no hand movement, no finger distortion, no glass warping, no camera movement, no flickering lights, no abrupt loop reset.
+```
+
+**Se a ferramenta pedir duração/velocidade:** peça a mais longa disponível (geralmente 4–10s) e a velocidade mais lenta — "slow motion, 0.5x speed" se houver essa opção. Giro rápido quebra o clima sofisticado que a marca pede.
+
+**Ponto de atenção:** ferramentas de imagem→vídeo costumam distorcer mãos e dedos, e também tendem a interpretar "movimento no líquido" como um novo respingo em vez de um giro circular contínuo. Se sair errado, refaça a geração reforçando: "circular swirling motion only, like gently rotating the glass — not a splash or wave. Hand and fingers must remain completely frozen and unchanged."
 
 ## Depois de ter a imagem/vídeo final
 
