@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Uma Última Coisa — Empório Dýnami</title>
+  <meta name="robots" content="noindex">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/styles.css">
+</head>
+<body>
+
+  <header class="site-header site-header--funnel">
+    <div class="container">
+      <span class="wordmark">
+        Empório Dýnami
+        <span class="funnel-progress">Passo 2 de 2 — Antes de liberar seu acesso</span>
+      </span>
+    </div>
+  </header>
+
+  <main>
+    <section class="section">
+      <div class="container" style="max-width: 640px;">
+        <span class="section-eyebrow">Sua inscrição no Saindo do Zero já está confirmada</span>
+        <h1>Antes de você ir, uma última coisa</h1>
+        <p class="lede">Você vai receber o glossário dos termos de vinho junto com as aulas — mas só aparece aqui, com desconto, e só desta vez.</p>
+
+        <div class="upsell-card">
+          <h2>E-book "Glossário do Vinho para Iniciantes"</h2>
+          <p>Os termos essenciais explicados sem jargão, pra consultar sempre que precisar — mesmo fora das aulas.</p>
+          <div class="upsell-card__price">R$27</div>
+          <div class="upsell-actions">
+            <a class="btn btn--primary" href="#" id="aceitar-oferta">Quero Adicionar por R$27</a>
+            <a class="btn btn--secondary" href="../obrigado/" id="recusar-oferta">Não, obrigado — ir para o acesso</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <small>Empório Dýnami — Jundiaí, SP</small>
+    </div>
+  </footer>
+
+  <script>
+    /*
+      Front-end apenas: "Quero Adicionar" precisa disparar uma cobrança
+      adicional real (one-click upsell) via gateway de pagamento antes de
+      redirecionar. Sem integração, os dois botões levam para /obrigado.
+    */
+    document.getElementById('aceitar-oferta').addEventListener('click', (event) => {
+      event.preventDefault();
+      window.location.href = '../obrigado/';
+    });
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Finalizar Inscrição — Saindo do Zero | Empório Dýnami</title>
+  <meta name="description" content="Finalize sua inscrição no curso Saindo do Zero. R$197, garantia de 7 dias.">
+  <meta name="robots" content="noindex">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/styles.css">
+</head>
+<body>
+
+  <header class="site-header site-header--funnel">
+    <div class="container">
+      <span class="wordmark">
+        Empório Dýnami
+        <span class="funnel-progress">Passo 1 de 2 — Dados da inscrição</span>
+      </span>
+    </div>
+  </header>
+
+  <main>
+    <section class="section">
+      <div class="container">
+        <h1>Finalize sua inscrição</h1>
+
+        <div class="checkout-grid">
+
+          <!-- Formulário -->
+          <div>
+            <form id="checkout-form" novalidate>
+              <div class="form-group">
+                <label for="nome">Nome completo</label>
+                <input class="form-input" type="text" id="nome" name="nome" autocomplete="name" required>
+              </div>
+
+              <div class="form-group">
+                <label for="email">E-mail</label>
+                <input class="form-input" type="email" id="email" name="email" autocomplete="email" required>
+                <p style="font-size: 13px; color: var(--color-text-secondary); margin-top: 4px;">É pra este e-mail que enviamos o acesso às aulas.</p>
+              </div>
+
+              <div class="form-group">
+                <label for="whatsapp">WhatsApp</label>
+                <input class="form-input" type="tel" id="whatsapp" name="whatsapp" inputmode="tel" autocomplete="tel" required>
+              </div>
+
+              <div class="form-group">
+                <label id="pagamento-label">Forma de pagamento</label>
+                <div class="payment-options" role="radiogroup" aria-labelledby="pagamento-label">
+                  <label class="payment-option">
+                    <input type="radio" name="pagamento" value="cartao" checked> Cartão
+                  </label>
+                  <label class="payment-option">
+                    <input type="radio" name="pagamento" value="pix"> Pix
+                  </label>
+                  <label class="payment-option">
+                    <input type="radio" name="pagamento" value="boleto"> Boleto
+                  </label>
+                </div>
+              </div>
+
+              <!-- Order bump -->
+              <div class="bump-card">
+                <input type="checkbox" id="bump-ebook" name="bump-ebook">
+                <div>
+                  <label for="bump-ebook">Adicionar: E-book "Glossário do Vinho para Iniciantes" — <span class="bump-card__price">R$27</span></label>
+                  <p>Os termos essenciais pra você nunca mais travar numa carta de vinhos. Só aparece aqui, com este desconto.</p>
+                </div>
+              </div>
+
+              <button type="submit" class="btn btn--primary btn--block" style="margin-top: var(--space-lg);">Confirmar Inscrição</button>
+
+              <div class="trust-line">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                Pagamento processado com segurança. Garantia de 7 dias após assistir as 4 aulas.
+              </div>
+            </form>
+          </div>
+
+          <!-- Resumo do pedido -->
+          <div>
+            <div class="order-summary">
+              <h2 style="font-size: 18px; margin-bottom: var(--space-md);">Resumo</h2>
+              <div class="order-summary__row">
+                <span>Curso Saindo do Zero</span>
+                <span class="order-summary__price">R$197,00</span>
+              </div>
+              <div class="order-summary__row" id="resumo-bump" hidden>
+                <span>E-book Glossário do Vinho</span>
+                <span class="order-summary__price">R$27,00</span>
+              </div>
+              <div class="order-summary__row order-summary__row--total">
+                <span>Total</span>
+                <span class="order-summary__price" id="resumo-total">R$197,00</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <small>Empório Dýnami — Jundiaí, SP</small>
+    </div>
+  </footer>
+
+  <script>
+    /*
+      Front-end apenas: sem integração de pagamento real. Antes de publicar,
+      o formulário precisa ser conectado a um gateway (Pix/cartão/boleto) e o
+      submit deve redirecionar para /oferta-ebook (se o bump não foi
+      aceito) ou direto para /obrigado (se foi aceito) — conforme
+      docs/site-architecture.md.
+    */
+    const bumpCheckbox = document.getElementById('bump-ebook');
+    const resumoBump = document.getElementById('resumo-bump');
+    const resumoTotal = document.getElementById('resumo-total');
+
+    bumpCheckbox.addEventListener('change', () => {
+      resumoBump.hidden = !bumpCheckbox.checked;
+      resumoTotal.textContent = bumpCheckbox.checked ? 'R$224,00' : 'R$197,00';
+    });
+
+    document.getElementById('checkout-form').addEventListener('submit', (event) => {
+      event.preventDefault();
+      window.location.href = bumpCheckbox.checked ? '../obrigado/' : '../oferta-ebook/';
+    });
+  </script>
+
+</body>
+</html>
