@@ -41,4 +41,10 @@
   --radius-input: 4px;
   --radius-modal: 8px;
   --radius-pill: 9999px;
+
+  /* Shadow */
+  --shadow-sm: 0 1px 3px rgba(33, 26, 22, 0.08);
+  --shadow-md: 0 6px 20px rgba(33, 26, 22, 0.10);
+  --shadow-lg: 0 16px 40px rgba(33, 26, 22, 0.16);
+  --shadow-glow-primary: 0 12px 32px rgba(92, 26, 33, 0.22);
 }

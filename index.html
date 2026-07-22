@@ -27,11 +27,34 @@
     <!-- 1. Hero -->
     <section class="hero">
       <div class="container">
-        <h1>Ninguém nasce sabendo escolher um vinho. Em 4 aulas, você aprende — sem passar vergonha no caminho.</h1>
-        <p class="hero__subhead">Um curso direto ao ponto para quem já bebe vinho socialmente, mas trava na hora de escolher o rótulo, ler a carta ou dar opinião numa mesa de negócios.</p>
-        <div class="hero__cta-group">
-          <a class="btn btn--primary btn--block" href="#oferta">Quero Aprender Sem Enrolação</a>
-          <span class="hero__guarantee-note">Garantia de 7 dias — sem perguntas</span>
+        <div class="hero__grid">
+          <div>
+            <h1>Ninguém nasce sabendo escolher um vinho. Em 4 aulas, você aprende — sem passar vergonha no caminho.</h1>
+            <p class="hero__subhead">Um curso direto ao ponto para quem já bebe vinho socialmente, mas trava na hora de escolher o rótulo, ler a carta ou dar opinião numa mesa de negócios.</p>
+            <div class="hero__cta-group">
+              <a class="btn btn--primary btn--block" href="#oferta">Quero Aprender Sem Enrolação</a>
+              <span class="hero__guarantee-note">Garantia de 7 dias — sem perguntas</span>
+            </div>
+          </div>
+          <div class="hero__visual" aria-hidden="true">
+            <svg viewBox="0 0 320 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <linearGradient id="wineFill" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0%" stop-color="#5C1A21"/>
+                  <stop offset="100%" stop-color="#3D1116"/>
+                </linearGradient>
+              </defs>
+              <path d="M120 40 C120 90 100 110 100 150 C100 195 135 225 160 225 C185 225 220 195 220 150 C220 110 200 90 200 40 Z" fill="url(#wineFill)" opacity="0.9"/>
+              <path d="M108 60 C112 100 100 115 100 150 C100 190 132 220 160 220" stroke="#E4C766" stroke-width="1.5" opacity="0.5" fill="none"/>
+              <path d="M85 38 C85 38 235 38 235 38" stroke="#C9A227" stroke-width="2" stroke-linecap="round"/>
+              <path d="M100 38 C100 90 100 110 100 150 C100 195 130 225 160 225 C190 225 220 195 220 150 C220 110 220 90 220 38" stroke="#C9A227" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+              <line x1="160" y1="225" x2="160" y2="330" stroke="#C9A227" stroke-width="2.5"/>
+              <ellipse cx="160" cy="345" rx="46" ry="10" fill="none" stroke="#C9A227" stroke-width="2.5"/>
+              <circle cx="60" cy="90" r="3" fill="#C9A227" opacity="0.6"/>
+              <circle cx="270" cy="130" r="2" fill="#C9A227" opacity="0.5"/>
+              <circle cx="245" cy="70" r="2.5" fill="#E4C766" opacity="0.6"/>
+            </svg>
+          </div>
         </div>
       </div>
     </section>
@@ -50,8 +73,9 @@
     </section>
 
     <!-- 3. Solução / Mecanismo -->
-    <section class="section section--alt solucao">
+    <section class="section section--alt solucao reveal">
       <div class="container">
+        <div class="ornament" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.5 6.5L21 9l-5 4.5 1.5 7L12 17l-5.5 3.5 1.5-7L3 9l6.5-.5z"/></svg></div>
         <span class="section-eyebrow">O método</span>
         <h2>O "Saindo do Zero"</h2>
         <p class="lede">4 aulas em vídeo, no seu tempo, sem jargão técnico não explicado e sem tom professoral. Cada aula troca teoria por analogia do cotidiano — o objetivo não é te transformar em especialista, é te dar confiança prática pra usar em jantares, compras, presentes e conversas de negócio.</p>
@@ -61,7 +85,7 @@
     </section>
 
     <!-- 4. O Que Você Recebe -->
-    <section class="section" id="entrega">
+    <section class="section reveal" id="entrega">
       <div class="container">
         <span class="section-eyebrow">A entrega completa</span>
         <h2>Tudo incluso, sem letra miúda</h2>
@@ -108,7 +132,7 @@
     </section>
 
     <!-- 5. Resultados (substitui prova social ate haver depoimento real — ver docs/copy-saindo-do-zero.md secao 5) -->
-    <section class="section section--alt">
+    <section class="section section--alt reveal">
       <div class="container">
         <span class="section-eyebrow">O que você vai conseguir fazer</span>
         <h2>Depois das 4 aulas</h2>
@@ -131,7 +155,7 @@
     </section>
 
     <!-- 6. Autoridade da Marca-Mãe -->
-    <section class="section autoridade">
+    <section class="section autoridade reveal">
       <div class="container">
         <span class="section-eyebrow">Por trás do curso</span>
         <h2>Empório Dýnami</h2>
@@ -140,8 +164,9 @@
     </section>
 
     <!-- 7. Oferta e Preço -->
-    <section class="section" id="oferta">
+    <section class="section reveal" id="oferta">
       <div class="container">
+        <div class="ornament" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.5 6.5L21 9l-5 4.5 1.5 7L12 17l-5.5 3.5 1.5-7L3 9l6.5-.5z"/></svg></div>
         <span class="section-eyebrow">O investimento</span>
         <h2>Saindo do Zero</h2>
 
@@ -248,6 +273,65 @@
       <small>Empório Dýnami — Jundiaí, SP</small>
     </div>
   </footer>
+
+  <!-- Barra de CTA fixa: mantem o botao de compra sempre acessivel ao rolar -->
+  <div class="sticky-cta" id="sticky-cta">
+    <span class="sticky-cta__price">R$197 <span style="font-family: var(--font-body); font-weight: 400; font-size: 13px; color: var(--color-text-secondary);">à vista</span></span>
+    <a class="btn btn--primary" href="#oferta">Quero Aprender</a>
+  </div>
+
+  <script>
+    // Revela secoes ao rolar a pagina (ignorado se prefers-reduced-motion)
+    const revealAll = () => document.querySelectorAll('.reveal').forEach((el) => el.classList.add('is-visible'));
+
+    if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches && 'IntersectionObserver' in window) {
+      const revealObserver = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+            revealObserver.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.12 });
+      document.querySelectorAll('.reveal').forEach((el) => revealObserver.observe(el));
+
+      // Rede de seguranca 1: um clique em link de ancora (#oferta, #entrega) pode pular
+      // secoes inteiras sem elas nunca "entrarem" na viewport — revela tudo antes do salto.
+      document.querySelectorAll('a[href^="#"]').forEach((link) => {
+        link.addEventListener('click', revealAll);
+      });
+
+      // Rede de seguranca 2: se por qualquer motivo o observer nao disparar
+      // (restauracao de scroll do navegador, elementos fora do fluxo normal etc.),
+      // garante que nada fique invisivel para sempre.
+      window.setTimeout(revealAll, 4000);
+    } else {
+      revealAll();
+    }
+
+    // Mostra a barra de CTA fixa depois que o hero sai de vista, esconde perto do CTA final
+    const stickyCta = document.getElementById('sticky-cta');
+    const heroSection = document.querySelector('.hero');
+    const finalCtaSection = document.querySelector('.cta-final');
+    let heroPassed = false;
+    let nearFinalCta = false;
+
+    const updateStickyVisibility = () => {
+      stickyCta.classList.toggle('is-visible', heroPassed && !nearFinalCta);
+    };
+
+    if ('IntersectionObserver' in window) {
+      new IntersectionObserver(([entry]) => {
+        heroPassed = !entry.isIntersecting && entry.boundingClientRect.top < 0;
+        updateStickyVisibility();
+      }, { threshold: 0 }).observe(heroSection);
+
+      new IntersectionObserver(([entry]) => {
+        nearFinalCta = entry.isIntersecting;
+        updateStickyVisibility();
+      }, { threshold: 0 }).observe(finalCtaSection);
+    }
+  </script>
 
 </body>
 </html>
