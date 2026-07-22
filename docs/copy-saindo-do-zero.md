@@ -50,7 +50,7 @@ O problema nunca foi você. Foi que ninguém nunca te ensinou isso de um jeito q
 
 **Header de seção:** O "Saindo do Zero"
 
-4 aulas em vídeo. Sem jargão técnico não explicado, sem tom professoral, no seu tempo. Cada aula troca teoria por analogia do cotidiano — o objetivo não é te transformar em especialista, é te dar confiança prática pra usar em jantares, compras, presentes e conversas de negócio.
+4 aulas em vídeo, no seu tempo, sem jargão técnico não explicado e sem tom professoral. Cada aula troca teoria por analogia do cotidiano — o objetivo não é te transformar em especialista, é te dar confiança prática pra usar em jantares, compras, presentes e conversas de negócio.
 
 Ao final de cada aula, um quiz rápido fixa o que você aprendeu — não pra te testar, pra garantir que ficou.
 
@@ -64,7 +64,7 @@ Ao final de cada aula, um quiz rápido fixa o que você aprendeu — não pra te
 
 | # | O que é | Por que importa |
 |---|---------|------------------|
-| 1 | As 4 aulas completas, no seu tempo | O núcleo do curso |
+| 1 | As 4 aulas completas, no seu tempo | É onde a trava desaparece — direto ao ponto, sem enrolação |
 | 2 | Quiz de fixação ao final de cada aula | Pra garantir que o aprendizado gruda |
 | 3 | Ficha de degustação e checklist de armazenamento (download) | Ferramentas que você usa muito depois do curso acabar |
 | 4 | Comunidade fechada (WhatsApp/Telegram) | Pra tirar dúvida quando a aula já ficou pra trás |
@@ -109,6 +109,8 @@ O "Saindo do Zero" nasceu dentro do Empório Dýnami, em Jundiaí — onde vinho
 **Order bump (exibido no checkout, não aqui):** e-book "Glossário do Vinho para Iniciantes" — R$27–37.
 
 **Selo:** `Sem Enrolação` — reforça o nome do curso e a promessa central.
+
+**Linha de próximo passo (reduz fricção no momento da decisão):** Acesso liberado assim que o pagamento é confirmado — você já assiste a primeira aula no mesmo dia.
 
 **Escassez/urgência:** *não incluída até confirmação do fundador* (ver `docs/offer-saindo-do-zero.md`, seção 3.4). Se a resposta vier positiva para prazo real de preço ou turma por data, inserir aqui como linha adicional logo abaixo do preço.
 
@@ -173,9 +175,28 @@ Em 4 aulas, sem jargão, você sai sabendo decidir com confiança — na próxim
 
 ---
 
+## Registro de Revisão — Seven Sweeps (copy-editing)
+
+Passagem completa pelo framework de 7 sweeps. Achados e correções:
+
+| Sweep | Achado | Correção aplicada |
+|-------|--------|---------------------|
+| 1. Clarity | Seção 3 abria com 3 fragmentos de frase encadeados por ponto ("4 aulas em vídeo. Sem jargão... Sem tom professoral, no seu tempo.") — lia de forma picotada | Unificado em uma frase só, com fluxo natural |
+| 2. Voice and Tone | Consistente do início ao fim — "você" informal, sem jargão, tom educativo do produto de entrada (conforme `brand-guidelines.md`) | Nenhuma correção necessária |
+| 3. So What | Item 1 da tabela "O Que Você Recebe" respondia com descrição ("O núcleo do curso"), não com benefício | Reescrito para nomear o resultado para o leitor ("é onde a trava desaparece") |
+| 4. Prove It | Seção de prova social não tem depoimento real ainda — mantido como placeholder em vez de inventar (decisão intencional, não falha de copy) | Sem alteração — ver nota de placeholders no topo do doc |
+| 5. Specificity | Já forte: "4 aulas", "7 dias", "R$197", "12x de R$19,70", tabela de entregáveis nomeada item a item | Sem alteração necessária |
+| 6. Heightened Emotion | Seção de Problema já usa cena concreta (mesa, carta de vinhos, "pede o segundo mais barato") — emoção presente sem exagero | Sem alteração necessária |
+| 7. Zero Risk | Faltava dizer o que acontece **depois** de clicar comprar — gap de fricção logo antes da decisão | Adicionada linha "Acesso liberado assim que o pagamento é confirmado — você já assiste a primeira aula no mesmo dia" na seção 7 (Oferta e Preço) |
+
+**Segunda passagem de verificação:** reconferido Clarity e Voice and Tone após as correções acima — nenhuma nova inconsistência introduzida.
+
+**Resultado:** copy pronta para revisão do fundador nos itens ainda pendentes (prova social real, decisão de escassez). Não passou por *Expert Panel Scoring* multi-persona — recomendado antes de ir ao ar, dado que é página de vendas de alto tráfego pago (ver seção "Quando usar" do skill `copy-editing`).
+
+---
+
 ## Próximos passos
 
 1. Fundador preenche os `[PLACEHOLDER]` de prova social com depoimento/número reais antes de publicar
 2. Decisão pendente de escassez/urgência (seção 7) — ver `docs/offer-saindo-do-zero.md`
-3. Rodar a skill `copy-editing` para revisão linha a linha antes de implementar em HTML/CSS
-4. Implementar a página usando `docs/design-tokens.css` / `brand-guidelines.md` (skill `ui-ux-pro-max`)
+3. Implementar a página usando `assets/design-tokens.css` / `docs/brand-guidelines.md` (skill `ui-ux-pro-max`)
