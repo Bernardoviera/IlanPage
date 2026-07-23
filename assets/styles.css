@@ -243,12 +243,12 @@ p { margin: 0 0 var(--space-md); max-width: 65ch; }
 @media (min-width: 768px) {
   .hero {
     /* A altura passa a acompanhar a largura na mesma proporcao do video
-       (960x720 = 4:3) — cover preenche a secao de ponta a ponta sem sobrar
+       (1376x768) — cover preenche a secao de ponta a ponta sem sobrar
        nem cortar nada, porque a caixa tem exatamente a mesma proporcao do
        video. Se o conteudo (titulo etc.) precisar de mais espaco que isso,
        a secao cresce normalmente — aspect-ratio nao trunca o conteudo. */
     min-height: 0;
-    aspect-ratio: 4 / 3;
+    aspect-ratio: 1376 / 768;
   }
 }
 .hero__media {
@@ -261,7 +261,16 @@ p { margin: 0 0 var(--space-md); max-width: 65ch; }
   width: 100%;
   height: 100%;
   object-fit: cover;
+  /* No celular (abaixo de 768px, min-height fixa + video bem mais largo
+     que a caixa) o corte de "cover" tira boa parte dos lados — a taca
+     esta na direita do quadro, entao sem isso ela sai cortada da tela.
+     A partir de 768px a secao usa aspect-ratio identica ao video (ver
+     abaixo), entao cover nao precisa cortar nada e volta pro centro. */
+  object-position: 78% center;
   display: block;
+}
+@media (min-width: 768px) {
+  .hero__media video { object-position: center center; }
 }
 .hero__scrim {
   position: absolute;
