@@ -27,8 +27,21 @@
     <!-- 1. Hero -->
     <section class="hero">
       <div class="hero__media" aria-hidden="true">
+        <!--
+          Duas camadas: a de tras e a propria imagem poster, borrada e
+          ampliada, cobrindo a secao inteira (preenche qualquer sobra sem
+          gastar dado extra de video); a da frente e o video nitido em
+          "contain", que nunca corta a taca/mao, seja qual for o formato da
+          tela. Um segundo <video> com a mesma fonte foi testado e descartado:
+          dois pedidos simultaneos do mesmo arquivo grande competem por
+          banda/conexao (mais visivel em servidores simples, mas desperdiça
+          dado real tambem em produção) — a imagem estatica borrada resolve
+          o mesmo efeito visual por uma fração do custo.
+        -->
+        <img class="hero__media-backdrop" src="assets/hero-wine-poster.jpg" alt="" aria-hidden="true">
         <video
           id="hero-video"
+          class="hero__media-fg"
           poster="assets/hero-wine-poster.jpg"
           muted
           loop
@@ -270,17 +283,20 @@
   </div>
 
   <script>
-    // Video de fundo do hero: toca em qualquer tela, exceto se o usuario
-    // pediu movimento reduzido (nesse caso fica só o poster, parado).
-    const heroVideo = document.getElementById('hero-video');
+    // Video de fundo do hero (2 camadas: borrada + nitida) toca em qualquer
+    // tela, exceto se o usuario pediu movimento reduzido (nesse caso fica
+    // só o poster da camada nitida, parado).
+    const heroVideos = document.querySelectorAll('.hero__media video');
     const reducedMotionQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
 
     const syncHeroVideo = () => {
-      if (!reducedMotionQuery.matches) {
-        heroVideo.play().catch(() => {}); // autoplay pode ser bloqueado; poster cobre esse caso
-      } else {
-        heroVideo.pause();
-      }
+      heroVideos.forEach((v) => {
+        if (!reducedMotionQuery.matches) {
+          v.play().catch(() => {}); // autoplay pode ser bloqueado; poster cobre esse caso na camada nitida
+        } else {
+          v.pause();
+        }
+      });
     };
     syncHeroVideo();
     reducedMotionQuery.addEventListener('change', syncHeroVideo);
