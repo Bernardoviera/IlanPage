@@ -580,6 +580,69 @@ p { margin: 0 0 var(--space-md); max-width: 65ch; }
 }
 .solucao__grid .lede { margin-bottom: var(--space-lg); }
 
+.solucao__demo {
+  font-size: 15px;
+  color: var(--color-text-secondary);
+  background: var(--color-bg);
+  border: 1px dashed var(--color-border);
+  border-radius: var(--radius-card);
+  padding: var(--space-md);
+  margin-bottom: var(--space-lg);
+}
+
+/* Termo com tooltip explicativo — demonstracao ao vivo do que o curso e o
+   e-book "Glossario do Vinho" ensinam. Funciona no hover (mouse) e no
+   foco/toque (teclado e mobile, via tabindex + JS de fallback abaixo). */
+.termo {
+  position: relative;
+  display: inline-block;
+  font-weight: 600;
+  color: var(--color-primary);
+  border-bottom: 1.5px dotted var(--color-secondary);
+  cursor: help;
+}
+.termo__tip {
+  position: absolute;
+  left: 50%;
+  bottom: calc(100% + 10px);
+  transform: translateX(-50%) translateY(6px);
+  width: 250px;
+  max-width: 72vw;
+  background: var(--color-primary-dark);
+  color: var(--color-bg);
+  font-family: var(--font-body);
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 1.5;
+  padding: var(--space-sm) var(--space-md);
+  border-radius: var(--radius-card);
+  box-shadow: var(--shadow-lg);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 180ms ease, transform 180ms ease;
+  z-index: 20;
+  text-align: left;
+  white-space: normal;
+}
+.termo__tip::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 6px solid transparent;
+  border-top-color: var(--color-primary-dark);
+}
+.termo:hover .termo__tip,
+.termo:focus .termo__tip,
+.termo:focus-within .termo__tip,
+.termo.is-open .termo__tip {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) translateY(0);
+}
+
 .steps {
   list-style: none;
   margin: 0;

@@ -91,6 +91,13 @@
             <span class="section-eyebrow">O método</span>
             <h2>O "Saindo do Zero"</h2>
             <p class="lede">4 aulas em vídeo, no seu tempo, sem jargão técnico não explicado e sem tom professoral. Cada aula troca teoria por analogia do cotidiano.</p>
+            <p class="solucao__demo">
+              Experimenta: você não precisa saber o que são
+              <span class="termo" tabindex="0">taninos<span class="termo__tip" role="tooltip">Substância da casca e da semente da uva que dá aquela sensação de "boca seca" no vinho tinto — quanto mais tanino, mais firme e estruturado ele é.</span></span>
+              nem o que é um vinho
+              <span class="termo" tabindex="0">encorpado<span class="termo__tip" role="tooltip">Vinho com mais densidade e peso na boca — como leite integral comparado a desnatado. Geralmente tintos mais intensos e maduros.</span></span>
+              antes de começar. A gente te explica no caminho — passa o mouse e confere.
+            </p>
             <a class="btn btn--secondary" href="#entrega">
               <span class="btn__label">Ver o Que Está Nas 4 Aulas</span>
               <span class="btn__reveal" aria-hidden="true">
@@ -489,6 +496,21 @@
       }
       document.querySelectorAll('.faq-item').forEach((el) => new FaqAccordion(el));
     }
+
+    // Tooltip de termo (glossario de vinho): :hover/:focus ja cobrem mouse e
+    // teclado, mas foco por toque em <span> e pouco confiavel no iOS Safari —
+    // reforca com clique/toque explicito, fechando ao tocar fora.
+    document.querySelectorAll('.termo').forEach((termo) => {
+      termo.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const wasOpen = termo.classList.contains('is-open');
+        document.querySelectorAll('.termo.is-open').forEach((t) => t.classList.remove('is-open'));
+        if (!wasOpen) termo.classList.add('is-open');
+      });
+    });
+    document.addEventListener('click', () => {
+      document.querySelectorAll('.termo.is-open').forEach((t) => t.classList.remove('is-open'));
+    });
   </script>
 
 </body>
