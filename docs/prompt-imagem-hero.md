@@ -2,7 +2,21 @@
 
 > Calibrado com `docs/brand-guidelines.md` (paleta vinho/dourado/creme, iluminação quente, estética "wine bar europeu", nunca fast-casual).
 
-## Prompt principal (colar no ChatGPT/DALL·E)
+## v2 — taça deslocada pra direita (não brigar mais com o texto)
+
+**Motivo da correção:** o título/CTA no site ficam alinhados à esquerda, sobre a metade mais escura do degradê. Na v1, a taça saía centralizada e acabava embaixo do texto. Peça explicitamente pra composição deixar a taça na direita e um espaço vazio (só fundo desfocado) na esquerda.
+
+```
+A close-up, ultra-realistic 4K photograph of an elegant hand gently swirling a glass of red wine. Shot in the style of luxury editorial food and wine photography. Composition: the wine glass and hand are positioned in the right third of the frame, clearly off-center — the left two-thirds of the frame is empty negative space showing only the soft, blurred, out-of-focus background (no glass, no hand, no objects), reserved for text to be placed over it later. Warm, low-key lighting like a European wine bar at dusk — a single soft key light from the upper left, golden hour warmth, deep shadows. The wine is caught mid-swirl, visible motion and legs on the glass, deep wine-red color (like a Bordeaux), rich reflections of the warm light through the liquid. The glass is a fine crystal wine glass, stem held delicately between thumb and fingers, hand well-groomed and elegant, skin tone warm under the lighting. Shallow depth of field, background is a dark, blurred restaurant interior with warm bokeh lights, out of focus. Muted warm color grade — deep burgundy, warm gold, cream tones. Shot on a full-frame camera, 85mm lens, f/2.0, natural film grain, no harsh flash, no studio-white lighting. Sophisticated, intimate, unhurried mood. No text, no logos, no other people, no visible face.
+```
+
+**Se a composição sair errada (taça no centro ou na esquerda):** peça de novo reforçando só essa parte: *"move the glass and hand further to the right, closer to the right edge of the frame — leave the entire left half of the image empty and out of focus, with nothing in it."*
+
+**Se quiser o oposto** (texto alinhado à direita, taça na esquerda), é só inverter: troque "right third" por "left third" e "left two-thirds" por "right two-thirds" no prompt acima — mas aí me avisa, porque eu preciso trocar o degradê escuro do site de lado também (hoje ele escurece a esquerda).
+
+---
+
+## v1 — prompt original (taça centralizada, arquivado pra referência)
 
 ```
 A close-up, ultra-realistic 4K photograph of an elegant hand gently swirling a glass of red wine. Shot in the style of luxury editorial food and wine photography. Warm, low-key lighting like a European wine bar at dusk — a single soft key light from the upper left, golden hour warmth, deep shadows. The wine is caught mid-swirl, visible motion and legs on the glass, deep wine-red color (like a Bordeaux), rich reflections of the warm light through the liquid. The glass is a fine crystal wine glass, stem held delicately between thumb and fingers, hand well-groomed and elegant, skin tone warm under the lighting. Shallow depth of field, background is a dark, blurred restaurant interior with warm bokeh lights, out of focus. Muted warm color grade — deep burgundy, warm gold, cream tones. Shot on a full-frame camera, 85mm lens, f/2.0, natural film grain, no harsh flash, no studio-white lighting. Sophisticated, intimate, unhurried mood. No text, no logos, no other people, no visible face.
