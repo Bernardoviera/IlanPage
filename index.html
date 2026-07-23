@@ -26,32 +26,24 @@
 
     <!-- 1. Hero -->
     <section class="hero">
-      <div class="container">
-        <div class="hero__grid">
-          <div>
-            <h1>Ninguém nasce sabendo escolher um vinho. Em 4 aulas, você aprende — sem passar vergonha no caminho.</h1>
-            <p class="hero__subhead">Um curso direto ao ponto para quem já bebe vinho socialmente, mas trava na hora de escolher o rótulo, ler a carta ou dar opinião numa mesa de negócios.</p>
-            <div class="hero__cta-group">
-              <a class="btn btn--primary btn--block" href="#oferta">Quero Aprender Sem Enrolação</a>
-              <span class="hero__guarantee-note">Garantia de 7 dias — sem perguntas</span>
-            </div>
-          </div>
-          <div class="hero__visual" aria-hidden="true">
-            <!--
-              Video carregado sob demanda: preload="none" + JS (ver fim do body)
-              so inicia o download/play em telas >=900px, para nao gastar dados
-              de quem acessa pelo celular (onde este bloco fica oculto via CSS).
-            -->
-            <video
-              id="hero-video"
-              poster="assets/hero-wine-poster.jpg"
-              muted
-              loop
-              playsinline
-              preload="none">
-              <source src="assets/hero-wine.mp4" type="video/mp4">
-            </video>
-          </div>
+      <div class="hero__media" aria-hidden="true">
+        <video
+          id="hero-video"
+          poster="assets/hero-wine-poster.jpg"
+          muted
+          loop
+          playsinline
+          preload="auto">
+          <source src="assets/hero-wine.mp4" type="video/mp4">
+        </video>
+        <div class="hero__scrim"></div>
+      </div>
+      <div class="container hero__content">
+        <h1>Ninguém nasce sabendo escolher um vinho. Em 4 aulas, você aprende — sem passar vergonha no caminho.</h1>
+        <p class="hero__subhead">Um curso direto ao ponto para quem já bebe vinho socialmente, mas trava na hora de escolher o rótulo, ler a carta ou dar opinião numa mesa de negócios.</p>
+        <div class="hero__cta-group">
+          <a class="btn btn--primary btn--block" href="#oferta">Quero Aprender Sem Enrolação</a>
+          <span class="hero__guarantee-note">Garantia de 7 dias — sem perguntas</span>
         </div>
       </div>
     </section>
@@ -278,24 +270,19 @@
   </div>
 
   <script>
-    // Video do hero: so carrega/toca em telas >=900px e se o usuario nao
-    // pediu movimento reduzido. Em telas menores o bloco fica oculto via
-    // CSS mesmo, mas preload="none" garante que nenhum byte de video seja
-    // baixado no celular.
+    // Video de fundo do hero: toca em qualquer tela, exceto se o usuario
+    // pediu movimento reduzido (nesse caso fica só o poster, parado).
     const heroVideo = document.getElementById('hero-video');
-    const desktopQuery = window.matchMedia('(min-width: 900px)');
     const reducedMotionQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
 
     const syncHeroVideo = () => {
-      if (desktopQuery.matches && !reducedMotionQuery.matches) {
-        if (heroVideo.preload === 'none') { heroVideo.preload = 'auto'; heroVideo.load(); }
+      if (!reducedMotionQuery.matches) {
         heroVideo.play().catch(() => {}); // autoplay pode ser bloqueado; poster cobre esse caso
       } else {
         heroVideo.pause();
       }
     };
     syncHeroVideo();
-    desktopQuery.addEventListener('change', syncHeroVideo);
     reducedMotionQuery.addEventListener('change', syncHeroVideo);
 
     // Revela secoes ao rolar a pagina (ignorado se prefers-reduced-motion)

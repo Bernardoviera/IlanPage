@@ -168,49 +168,43 @@ p { margin: 0 0 var(--space-md); max-width: 65ch; }
   .reveal { opacity: 1; transform: none; }
 }
 
-/* ---------- Hero ---------- */
+/* ---------- Hero (video de fundo em tela cheia) ---------- */
 .hero {
   position: relative;
-  padding-block: var(--space-2xl) var(--space-xl);
   overflow: hidden;
+  display: flex;
+  align-items: flex-end;
+  min-height: 90vh;
+  min-height: 90dvh;
+  padding-block: var(--space-2xl) calc(var(--space-2xl) * 1.4);
+  background: var(--color-primary-dark); /* fallback enquanto o video carrega */
+}
+.hero__media {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+.hero__media video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.hero__scrim {
+  position: absolute;
+  inset: 0;
   background:
-    radial-gradient(ellipse 800px 500px at 85% -10%, rgba(201, 162, 39, 0.16), transparent 60%),
-    radial-gradient(ellipse 600px 400px at 100% 100%, rgba(92, 26, 33, 0.08), transparent 60%);
+    linear-gradient(to top, rgba(20, 12, 10, 0.88) 0%, rgba(20, 12, 10, 0.55) 45%, rgba(20, 12, 10, 0.25) 75%),
+    linear-gradient(to right, rgba(20, 12, 10, 0.55) 0%, rgba(20, 12, 10, 0.1) 55%);
 }
-.hero__grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: var(--space-xl);
-  align-items: center;
+.hero__content {
   position: relative;
+  z-index: 2;
 }
-@media (min-width: 900px) {
-  .hero__grid { grid-template-columns: 1.1fr 0.9fr; }
-}
-.hero__visual {
-  display: none;
-}
-@media (min-width: 900px) {
-  .hero__visual {
-    display: block;
-    width: 100%;
-    max-width: 420px;
-    margin-inline: auto;
-  }
-  .hero__visual svg { width: 100%; height: auto; }
-  .hero__visual video {
-    width: 100%;
-    height: auto;
-    display: block;
-    border-radius: var(--radius-card);
-    box-shadow: var(--shadow-lg);
-    border: 1px solid rgba(201, 162, 39, 0.35);
-    background: var(--color-primary-dark);
-  }
-}
+.hero__content h1 { color: var(--color-bg); }
 .hero__subhead {
   font-size: 18px;
-  color: var(--color-text-secondary);
+  color: rgba(245, 241, 232, 0.82);
   max-width: 60ch;
 }
 .hero__cta-group {
@@ -222,9 +216,18 @@ p { margin: 0 0 var(--space-md); max-width: 65ch; }
 @media (min-width: 480px) {
   .hero__cta-group { flex-direction: row; align-items: center; }
 }
+.hero__cta-group .btn--primary {
+  background: var(--color-secondary);
+  color: var(--color-text-primary);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.35);
+}
+.hero__cta-group .btn--primary:hover { background: var(--color-secondary-light); }
 .hero__guarantee-note {
   font-size: 14px;
-  color: var(--color-text-secondary);
+  color: rgba(245, 241, 232, 0.7);
+}
+@media (min-width: 768px) {
+  .hero { min-height: 86vh; min-height: 86dvh; }
 }
 
 /* ---------- Problema ---------- */
