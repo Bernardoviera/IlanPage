@@ -74,11 +74,37 @@
     <section class="section section--alt solucao reveal">
       <div class="container">
         <div class="ornament" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.5 6.5L21 9l-5 4.5 1.5 7L12 17l-5.5 3.5 1.5-7L3 9l6.5-.5z"/></svg></div>
-        <span class="section-eyebrow">O método</span>
-        <h2>O "Saindo do Zero"</h2>
-        <p class="lede">4 aulas em vídeo, no seu tempo, sem jargão técnico não explicado e sem tom professoral. Cada aula troca teoria por analogia do cotidiano — o objetivo não é te transformar em especialista, é te dar confiança prática pra usar em jantares, compras, presentes e conversas de negócio.</p>
-        <p>Ao final de cada aula, um quiz rápido fixa o que você aprendeu — não pra te testar, pra garantir que ficou.</p>
-        <a class="btn btn--secondary" href="#entrega">Ver o Que Está Nas 4 Aulas</a>
+        <div class="solucao__grid">
+          <div>
+            <span class="section-eyebrow">O método</span>
+            <h2>O "Saindo do Zero"</h2>
+            <p class="lede">4 aulas em vídeo, no seu tempo, sem jargão técnico não explicado e sem tom professoral. Cada aula troca teoria por analogia do cotidiano.</p>
+            <a class="btn btn--secondary" href="#entrega">Ver o Que Está Nas 4 Aulas</a>
+          </div>
+          <ol class="steps">
+            <li class="steps__item">
+              <span class="steps__number">01</span>
+              <div>
+                <h3>Assista no seu tempo</h3>
+                <p>4 aulas em vídeo, sem data pra terminar — você decide o ritmo.</p>
+              </div>
+            </li>
+            <li class="steps__item">
+              <span class="steps__number">02</span>
+              <div>
+                <h3>Faça o quiz de cada aula</h3>
+                <p>Fixa o que você aprendeu — não pra te testar, pra garantir que ficou.</p>
+              </div>
+            </li>
+            <li class="steps__item">
+              <span class="steps__number">03</span>
+              <div>
+                <h3>Aplique na próxima taça</h3>
+                <p>Confiança prática pra usar em jantares, compras e conversas de negócio.</p>
+              </div>
+            </li>
+          </ol>
+        </div>
       </div>
     </section>
 
@@ -154,6 +180,15 @@
 
     <!-- 6. Autoridade da Marca-Mãe -->
     <section class="section autoridade reveal">
+      <div class="autoridade__media" aria-hidden="true">
+        <!-- Reaproveita o mesmo video do hero, bem escurecido — dá textura
+             real a secao em vez de deixar so um retangulo de cor solida. -->
+        <video id="autoridade-video" muted loop playsinline preload="none" poster="assets/hero-wine-poster.jpg">
+          <source src="assets/hero-wine.mp4" type="video/mp4">
+        </video>
+        <div class="autoridade__scrim"></div>
+      </div>
+      <div class="autoridade__rings" aria-hidden="true"></div>
       <div class="container">
         <span class="section-eyebrow">Por trás do curso</span>
         <h2>Empório Dýnami</h2>
@@ -198,49 +233,49 @@
         <span class="section-eyebrow">Antes de começar</span>
         <h2>Perguntas frequentes</h2>
 
-        <details class="faq-item">
+        <details class="faq-item" name="faq-group">
           <summary>Eu não sei nada de vinho. Isso é pra mim mesmo?
             <svg class="faq-item__chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
           </summary>
           <p>Sim — o curso foi feito exatamente para quem nunca teve aula nenhuma sobre o assunto. Não tem pré-requisito.</p>
         </details>
 
-        <details class="faq-item">
+        <details class="faq-item" name="faq-group">
           <summary>Não tenho repertório pra escolher um vinho de R$200+. Isso muda com o curso?
             <svg class="faq-item__chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
           </summary>
           <p>Sim. O curso não te ensina teoria de sommelier — te dá critério prático pra decidir com confiança, em qualquer faixa de preço.</p>
         </details>
 
-        <details class="faq-item">
+        <details class="faq-item" name="faq-group">
           <summary>Já tentei aprender sobre vinho antes e não colou.
             <svg class="faq-item__chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
           </summary>
           <p>Provavelmente porque a explicação era técnica demais. Aqui a lógica é o oposto: analogia do cotidiano, sem jargão não explicado.</p>
         </details>
 
-        <details class="faq-item">
+        <details class="faq-item" name="faq-group">
           <summary>Não tenho tempo pra curso.
             <svg class="faq-item__chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
           </summary>
           <p>São 4 aulas, no seu tempo, sem data pra terminar. Você assiste quando der.</p>
         </details>
 
-        <details class="faq-item">
+        <details class="faq-item" name="faq-group">
           <summary>E se eu comprar e não gostar?
             <svg class="faq-item__chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
           </summary>
           <p>Você tem 7 dias após assistir as 4 aulas pra pedir reembolso total — sem perguntas.</p>
         </details>
 
-        <details class="faq-item">
+        <details class="faq-item" name="faq-group">
           <summary>O curso é só teoria ou eu consigo aplicar rápido?
             <svg class="faq-item__chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
           </summary>
           <p>Cada aula fecha com um quiz de fixação e você sai com ficha de degustação e checklist prontos pra usar na próxima vez que for escolher uma garrafa.</p>
         </details>
 
-        <details class="faq-item">
+        <details class="faq-item" name="faq-group">
           <summary>O que acontece depois que eu termino as 4 aulas?
             <svg class="faq-item__chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
           </summary>
@@ -296,6 +331,21 @@
     };
     syncHeroVideo();
     reducedMotionQuery.addEventListener('change', syncHeroVideo);
+
+    // Video de fundo da secao "Autoridade": so carrega/toca quando a secao
+    // entra na tela (fica bem mais abaixo na pagina — nao faz sentido
+    // baixar o video se a pessoa nunca rolar ate la) e pausa quando sai.
+    const autoridadeVideo = document.getElementById('autoridade-video');
+    if (autoridadeVideo && 'IntersectionObserver' in window) {
+      new IntersectionObserver(([entry]) => {
+        if (entry.isIntersecting && !reducedMotionQuery.matches) {
+          if (autoridadeVideo.preload === 'none') { autoridadeVideo.preload = 'auto'; autoridadeVideo.load(); }
+          autoridadeVideo.play().catch(() => {});
+        } else {
+          autoridadeVideo.pause();
+        }
+      }, { threshold: 0.15 }).observe(autoridadeVideo.closest('.autoridade'));
+    }
 
     // Revela secoes ao rolar a pagina (ignorado se prefers-reduced-motion)
     const revealAll = () => document.querySelectorAll('.reveal').forEach((el) => el.classList.add('is-visible'));
@@ -353,6 +403,7 @@
     // mantendo o <details>/<summary> para semantica e teclado. Sem
     // prefers-reduced-motion, deixa o comportamento nativo (instantaneo).
     if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      const faqInstances = [];
       class FaqAccordion {
         constructor(el) {
           this.details = el;
@@ -362,11 +413,19 @@
           this.isClosing = false;
           this.isExpanding = false;
           this.summary.addEventListener('click', (e) => this.onClick(e));
+          faqInstances.push(this);
         }
         onClick(e) {
           e.preventDefault();
           this.details.style.overflow = 'hidden';
           if (this.isClosing || !this.details.open) {
+            // Sanfona de verdade: só uma resposta aberta por vez —
+            // fecha qualquer outra que esteja aberta ou abrindo.
+            faqInstances.forEach((other) => {
+              if (other !== this && (other.details.open || other.isExpanding)) {
+                other.shrink();
+              }
+            });
             this.open();
           } else if (this.isExpanding || this.details.open) {
             this.shrink();

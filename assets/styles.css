@@ -347,19 +347,68 @@ p { margin: 0 0 var(--space-md); max-width: 65ch; }
 
 /* ---------- Autoridade ---------- */
 .autoridade {
+  position: relative;
+  overflow: hidden;
   background: var(--color-primary-dark);
   color: var(--color-bg);
 }
 .autoridade h2, .autoridade .section-eyebrow { color: var(--color-bg); }
 .autoridade .section-eyebrow { color: var(--color-secondary-light); }
 .autoridade p { color: #E9DFCF; max-width: 65ch; }
+.autoridade .container { position: relative; z-index: 2; }
 
-/* Anel decorativo — quebra o retangulo de cor solida das secoes escuras */
-.autoridade, .cta-final {
+.autoridade__media {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+.autoridade__media video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  filter: brightness(0.55) saturate(1.1);
+}
+.autoridade__scrim {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to right, rgba(20, 6, 8, 0.88) 0%, rgba(20, 6, 8, 0.65) 60%, rgba(20, 6, 8, 0.4) 100%);
+}
+.autoridade__rings {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+}
+.autoridade__rings::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: -140px;
+  width: 380px;
+  height: 380px;
+  border: 1px solid rgba(201, 162, 39, 0.3);
+  border-radius: 50%;
+  transform: translateY(-50%);
+}
+.autoridade__rings::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: -70px;
+  width: 230px;
+  height: 230px;
+  border: 1px solid rgba(201, 162, 39, 0.22);
+  border-radius: 50%;
+  transform: translateY(-50%);
+}
+
+/* Anel decorativo no CTA final — quebra o retangulo de cor solida */
+.cta-final {
   position: relative;
   overflow: hidden;
 }
-.autoridade::before, .cta-final::before {
+.cta-final::before {
   content: "";
   position: absolute;
   top: 50%;
@@ -371,7 +420,7 @@ p { margin: 0 0 var(--space-md); max-width: 65ch; }
   transform: translateY(-50%);
   pointer-events: none;
 }
-.autoridade::after, .cta-final::after {
+.cta-final::after {
   content: "";
   position: absolute;
   top: 50%;
@@ -382,6 +431,63 @@ p { margin: 0 0 var(--space-md); max-width: 65ch; }
   border-radius: 50%;
   transform: translateY(-50%);
   pointer-events: none;
+}
+
+/* ---------- Solucao (passos) ---------- */
+.solucao__grid {
+  display: grid;
+  gap: var(--space-xl);
+  grid-template-columns: 1fr;
+}
+@media (min-width: 900px) {
+  .solucao__grid { grid-template-columns: 0.9fr 1.1fr; align-items: start; }
+}
+.solucao__grid .lede { margin-bottom: var(--space-lg); }
+
+.steps {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+}
+.steps__item {
+  display: flex;
+  gap: var(--space-md);
+  align-items: flex-start;
+  position: relative;
+  padding-left: var(--space-lg);
+  border-left: 2px solid var(--color-border);
+}
+.steps__item:last-child { border-left-color: transparent; }
+.steps__number {
+  position: absolute;
+  left: -14px;
+  top: 0;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: var(--color-bg);
+  border: 2px solid var(--color-secondary);
+  color: var(--color-primary);
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.steps__item h3 {
+  font-size: 17px;
+  font-family: var(--font-body);
+  font-weight: 600;
+  margin-bottom: var(--space-xs);
+}
+.steps__item p {
+  font-size: 15px;
+  color: var(--color-text-secondary);
+  margin: 0;
 }
 
 /* ---------- Oferta ---------- */
