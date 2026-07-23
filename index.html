@@ -37,39 +37,20 @@
             </div>
           </div>
           <div class="hero__visual" aria-hidden="true">
-            <svg viewBox="0 0 320 400" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <defs>
-                <linearGradient id="wineFill" x1="0" y1="0" x2="0" y2="1">
-                  <stop offset="0%" stop-color="#7A2530"/>
-                  <stop offset="100%" stop-color="#3D1116"/>
-                </linearGradient>
-              </defs>
-
-              <!-- nivel do vinho dentro do calice -->
-              <path d="M119 128 C136 136 184 136 201 128 C207 160 199 196 160 227 C121 196 113 160 119 128 Z" fill="url(#wineFill)" opacity="0.92"/>
-
-              <!-- silhueta do calice: borda + corpo + haste + base, tudo como um unico contorno -->
-              <path d="M104 84
-                       C104 84 108 150 112 172
-                       C117 200 136 220 160 227
-                       C184 220 203 200 208 172
-                       C212 150 216 84 216 84"
-                    fill="none" stroke="#C9A227" stroke-width="2.5" stroke-linecap="round"/>
-
-              <!-- borda superior (vista de frente, elipse achatada) -->
-              <ellipse cx="160" cy="84" rx="56" ry="11" fill="none" stroke="#C9A227" stroke-width="2.5"/>
-
-              <!-- haste e base -->
-              <line x1="160" y1="227" x2="160" y2="322" stroke="#C9A227" stroke-width="2.5" stroke-linecap="round"/>
-              <ellipse cx="160" cy="336" rx="44" ry="9" fill="none" stroke="#C9A227" stroke-width="2.5"/>
-
-              <!-- brilho sutil no vidro -->
-              <path d="M124 100 C120 130 122 160 132 182" stroke="#E4C766" stroke-width="1.5" opacity="0.45" fill="none" stroke-linecap="round"/>
-
-              <circle cx="55" cy="95" r="3" fill="#C9A227" opacity="0.6"/>
-              <circle cx="268" cy="140" r="2" fill="#C9A227" opacity="0.5"/>
-              <circle cx="242" cy="65" r="2.5" fill="#E4C766" opacity="0.6"/>
-            </svg>
+            <!--
+              Video carregado sob demanda: preload="none" + JS (ver fim do body)
+              so inicia o download/play em telas >=900px, para nao gastar dados
+              de quem acessa pelo celular (onde este bloco fica oculto via CSS).
+            -->
+            <video
+              id="hero-video"
+              poster="assets/hero-wine-poster.jpg"
+              muted
+              loop
+              playsinline
+              preload="none">
+              <source src="assets/hero-wine.mp4" type="video/mp4">
+            </video>
           </div>
         </div>
       </div>
@@ -297,6 +278,26 @@
   </div>
 
   <script>
+    // Video do hero: so carrega/toca em telas >=900px e se o usuario nao
+    // pediu movimento reduzido. Em telas menores o bloco fica oculto via
+    // CSS mesmo, mas preload="none" garante que nenhum byte de video seja
+    // baixado no celular.
+    const heroVideo = document.getElementById('hero-video');
+    const desktopQuery = window.matchMedia('(min-width: 900px)');
+    const reducedMotionQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
+
+    const syncHeroVideo = () => {
+      if (desktopQuery.matches && !reducedMotionQuery.matches) {
+        if (heroVideo.preload === 'none') { heroVideo.preload = 'auto'; heroVideo.load(); }
+        heroVideo.play().catch(() => {}); // autoplay pode ser bloqueado; poster cobre esse caso
+      } else {
+        heroVideo.pause();
+      }
+    };
+    syncHeroVideo();
+    desktopQuery.addEventListener('change', syncHeroVideo);
+    reducedMotionQuery.addEventListener('change', syncHeroVideo);
+
     // Revela secoes ao rolar a pagina (ignorado se prefers-reduced-motion)
     const revealAll = () => document.querySelectorAll('.reveal').forEach((el) => el.classList.add('is-visible'));
 
