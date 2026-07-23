@@ -44,6 +44,21 @@ No splashing, no spilling, no liquid rising above the rim, no hand movement, no 
 
 **Ponto de atenção:** ferramentas de imagem→vídeo costumam distorcer mãos e dedos, e também tendem a interpretar "movimento no líquido" como um novo respingo em vez de um giro circular contínuo. Se sair errado, refaça a geração reforçando: "circular swirling motion only, like gently rotating the glass — not a splash or wave. Hand and fingers must remain completely frozen and unchanged."
 
+## Correção — v1 ficou "rápido demais"
+
+**Diagnóstico (frame a frame, não é a velocidade do vídeo em si):** o respingo congelado da imagem original desaba e se acomoda nos primeiros ~1-2s, e o resto do clipe fica praticamente parado (só uma espuma leve). O movimento inteiro acontece de uma vez no início em vez de ser um giro constante do primeiro ao último frame — é isso que dá a sensação de "rápido".
+
+**Prompt corrigido (reforça duração/constância do giro):**
+
+```
+Animate the wine with a slow, continuous circular swirling motion that stays constant and steady from the very first frame to the very last frame of the clip — the wine must keep gently rotating around the inside wall of the glass for the entire duration, never settling, never coming to rest, never slowing down or stopping partway through. Do not let the initial splash collapse or calm down quickly — instead, smoothly transition it into a slow steady circular current within the first half-second, and maintain that same gentle rotation speed for the rest of the clip. Motion should look like someone slowly and continuously swirling the glass to release aroma, at a constant, unhurried pace throughout — not a quick settle followed by stillness. The hand, fingers, glass, and background remain completely static and unchanged. Camera locked, no zoom, no pan. Seamless loop.
+```
+
+**Ajustes de parâmetro (mais importante que o texto do prompt, se a ferramenta tiver essas opções):**
+- **Motion strength / intensity:** se houver um controle desses, baixe para o mínimo (ex.: 2-3 de 10). Motion strength alto é a causa mais provável de o modelo "gastar" todo o movimento no início.
+- **Duração:** peça a mais longa disponível — 5-6s é pouco para um giro lento parecer elegante; se a ferramenta permitir 8-10s, o giro constante fica bem mais suave.
+- Se a ferramenta permitir **"motion brush"** ou máscara de área (Runway, Kling têm isso): pinte só a região do líquido dentro da taça como área de movimento e deixe mão/taça/fundo fora da máscara — isso evita tanto a distorção da mão quanto o "estouro" de movimento inicial.
+
 ## Depois de ter a imagem/vídeo final
 
 Me envie o arquivo (`SendUserFile` do seu lado, ou só me diga o caminho) que eu:
