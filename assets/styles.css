@@ -283,7 +283,15 @@ p { margin: 0 0 var(--space-md); max-width: 65ch; }
   position: relative;
   z-index: 2;
 }
-.hero__content h1 { color: var(--color-bg); }
+.hero__content h1 {
+  color: var(--color-bg);
+  /* Sem isso o titulo se estica pra ocupar a largura toda do container —
+     em telas medias (~1024-1400px) o container quase encosta na borda da
+     tela, e a taca (que fica na direita do video) acaba embaixo do texto.
+     Um teto fixo mantem o bloco de texto sempre dentro da metade esquerda,
+     nao importa a largura da janela. */
+  max-width: 620px;
+}
 .hero__subhead {
   font-size: 18px;
   color: rgba(245, 241, 232, 0.82);
