@@ -204,21 +204,31 @@
       </div>
     </section>
 
-    <!-- 6. Autoridade da Marca-Mãe -->
+    <!-- 6. Autoridade — o autor -->
     <!--
-      TODO fundador: quando escolher a imagem, coloque o arquivo em
-      assets/ (ex.: assets/autoridade.jpg) e reative o bloco
-      .autoridade__media abaixo (ver historico do git para o padrao usado
-      antes com video: <img> aqui dentro, object-fit:cover, mais
-      .autoridade__scrim para contraste do texto, igual ja existe em CSS).
-      Por enquanto a secao usa so a cor solida de fundo.
+      TODO fundador: a foto ainda não está salva em assets/. Envie o
+      arquivo (não colado no chat) para eu salvar como
+      assets/autor-ilan-pacheco.jpg e ativar o <img> abaixo — por ora
+      o layout reserva o espaço com .autoridade__photo vazio.
     -->
     <section class="section autoridade">
       <div class="autoridade__rings" aria-hidden="true"></div>
-      <div class="container">
-        <span class="section-eyebrow">Por trás do curso</span>
-        <h2>Empório Dýnami</h2>
-        <p>O "Saindo do Zero" nasceu dentro do Empório Dýnami, em Jundiaí — onde vinho, gastronomia e curadoria são tratados com o mesmo rigor de quem trata disciplina como método, não como discurso. Você não está aprendendo com um curso solto na internet: está aprendendo com quem cura a carta de vinhos de um restaurante de verdade, todos os dias.</p>
+      <div class="container autoridade__grid">
+        <div class="autoridade__photo">
+          <img src="assets/autor-ilan-pacheco.jpg" alt="Ilan Pacheco" loading="lazy" width="480" height="600">
+        </div>
+        <div class="autoridade__text">
+          <span class="section-eyebrow">Por trás do curso</span>
+          <h2>Ilan Pacheco</h2>
+          <p>Engenheiro, triatleta, cozinheiro e estrategista — Ilan assumiu em 2025 a Farfalle, manufatura de massas artesanais de Jundiaí com mais de 30 anos de história, e é o curador por trás do Empório Dýnami. A mesma lente que aplica à gestão e ao treino ele aplica ao vinho: processo antes de discurso, método antes de jargão.</p>
+          <p>É essa lógica — de quem cura a carta de um restaurante de verdade, todos os dias — que estrutura o "Saindo do Zero".</p>
+          <ul class="autoridade__pillars">
+            <li>Engenheiro</li>
+            <li>Triatleta</li>
+            <li>Cozinheiro</li>
+            <li>Estrategista</li>
+          </ul>
+        </div>
       </div>
     </section>
 
