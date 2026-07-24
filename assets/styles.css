@@ -116,6 +116,26 @@ p { margin: 0 0 var(--space-md); max-width: 65ch; }
   outline: 3px solid var(--color-secondary);
   outline-offset: 2px;
 }
+
+/* Estado de carregamento (ex.: submit do checkout, enquanto aguarda o
+   gateway de pagamento) — spinner some por padrao, aparece so com
+   .is-loading, sem depender de JS pra saber se deve girar ou nao. */
+.btn__spinner {
+  display: none;
+  width: 18px;
+  height: 18px;
+  animation: btn-spin 700ms linear infinite;
+}
+.btn.is-loading {
+  cursor: default;
+  pointer-events: none;
+  opacity: 0.85;
+}
+.btn.is-loading .btn__spinner { display: inline-block; }
+.btn.is-loading .btn__label { opacity: 0.9; }
+@keyframes btn-spin {
+  to { transform: rotate(360deg); }
+}
 .btn--primary {
   background: var(--color-primary);
   color: var(--color-bg);

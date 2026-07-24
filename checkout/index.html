@@ -73,7 +73,10 @@
                 </div>
               </div>
 
-              <button type="submit" class="btn btn--primary btn--block" style="margin-top: var(--space-lg);">Confirmar Inscrição</button>
+              <button type="submit" class="btn btn--primary btn--block" id="checkout-submit" style="margin-top: var(--space-lg);">
+                <svg class="btn__spinner" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-dasharray="42" stroke-dashoffset="32"/></svg>
+                <span class="btn__label">Confirmar Inscrição</span>
+              </button>
 
               <div class="trust-line">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
@@ -131,7 +134,17 @@
 
     document.getElementById('checkout-form').addEventListener('submit', (event) => {
       event.preventDefault();
-      window.location.href = bumpCheckbox.checked ? '../obrigado/' : '../oferta-ebook/';
+      const submitBtn = document.getElementById('checkout-submit');
+      if (submitBtn.classList.contains('is-loading')) return; // evita duplo envio
+      submitBtn.classList.add('is-loading');
+      submitBtn.disabled = true;
+      // Delay simulando o processamento do gateway real (a integracao de
+      // pagamento ainda nao existe — ver comentario no topo do script).
+      // Sem isso o spinner nem chegaria a aparecer, ja que o redirect hoje
+      // e instantaneo.
+      window.setTimeout(() => {
+        window.location.href = bumpCheckbox.checked ? '../obrigado/' : '../oferta-ebook/';
+      }, 700);
     });
   </script>
 
