@@ -229,7 +229,12 @@ p { margin: 0 0 var(--space-md); max-width: 65ch; }
 /* ---------- Hero (video de fundo em tela cheia) ---------- */
 .hero {
   position: relative;
-  overflow: hidden;
+  width: 100%;
+  /* Sem overflow:hidden aqui de proposito: .hero__media ja recorta o video
+     dentro dos proprios limites (ver abaixo). Se isso tambem cortasse o
+     conteudo, um titulo com mais linhas do que a altura via aspect-ratio
+     comporta ficaria com a primeira linha escondida em vez da secao
+     simplesmente crescer pra caber o texto. */
   display: flex;
   align-items: flex-end;
   /* Celular: altura minima fixa. object-fit: cover corta so os lados do
@@ -237,17 +242,18 @@ p { margin: 0 0 var(--space-md); max-width: 65ch; }
      a taca em si — seguro nessa proporcao estreita e alta. */
   min-height: 82vh;
   min-height: 82dvh;
-  padding-block: var(--space-2xl) calc(var(--space-2xl) * 1.4);
+  padding-block: var(--space-2xl) calc(var(--space-2xl) * 1.9);
   background: #2E1B0D; /* tom escuro sampleado do proprio video, cobre o instante antes do 1o frame */
 }
 @media (min-width: 768px) {
   .hero {
-    /* A altura passa a acompanhar a largura na mesma proporcao do video
-       (1376x768) — cover preenche a secao de ponta a ponta sem sobrar
-       nem cortar nada, porque a caixa tem exatamente a mesma proporcao do
-       video. Se o conteudo (titulo etc.) precisar de mais espaco que isso,
-       a secao cresce normalmente — aspect-ratio nao trunca o conteudo. */
-    min-height: 0;
+    /* A altura acompanha a largura na mesma proporcao do video (1376x768)
+       — cover preenche a secao de ponta a ponta sem cortar nada. Na
+       pratica um flex container com aspect-ratio nao cresce de forma
+       confiavel so por causa do conteudo (varia entre navegador), entao
+       um min-height cobre telas estreitas onde o titulo quebra em mais
+       linhas do que a altura via aspect-ratio comportaria. */
+    min-height: 720px;
     aspect-ratio: 1376 / 768;
   }
 }
@@ -290,7 +296,7 @@ p { margin: 0 0 var(--space-md); max-width: 65ch; }
      tela, e a taca (que fica na direita do video) acaba embaixo do texto.
      Um teto fixo mantem o bloco de texto sempre dentro da metade esquerda,
      nao importa a largura da janela. */
-  max-width: 620px;
+  max-width: 560px;
 }
 .hero__subhead {
   font-size: 18px;
