@@ -486,6 +486,43 @@ p { margin: 0 0 var(--space-md); max-width: 65ch; }
   margin: 0;
 }
 
+/* ---------- Módulos (syllabus das 4 aulas) ---------- */
+.modulos-grid {
+  display: grid;
+  gap: var(--space-md);
+  grid-template-columns: 1fr;
+  margin: var(--space-lg) 0 0;
+  padding: 0;
+  list-style: none;
+}
+@media (min-width: 640px) {
+  .modulos-grid { grid-template-columns: repeat(2, 1fr); }
+}
+.modulo-card {
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-md);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-card);
+  padding: var(--space-lg);
+}
+.modulo-card__number {
+  flex-shrink: 0;
+  font-family: var(--font-heading);
+  font-size: 28px;
+  font-weight: 400;
+  line-height: 1;
+  color: var(--color-secondary);
+  font-variant-numeric: tabular-nums;
+}
+.modulo-card h3 {
+  font-size: 16px;
+  font-family: var(--font-body);
+  font-weight: 600;
+  margin: 0;
+}
+
 /* ---------- Resultados (substitui prova social ate haver depoimentos reais) ---------- */
 .resultados-grid {
   display: grid;
