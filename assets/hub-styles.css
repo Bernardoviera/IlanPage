@@ -338,6 +338,11 @@ body:has(.sticky-bar){ padding-bottom: 78px; }
 }
 
 /* ===================== Hero com vídeo de fundo (Saindo do Zero) ===================== */
+/* Sem aspect-ratio de proposito: travar altura exata + flex quebra quando o
+   titulo (fonte maior, Cormorant) exige mais linhas do que a caixa comporta —
+   o conteudo nao tem como crescer e vaza por cima, ficando atras do header
+   sticky. min-height e' so um minimo: a secao cresce com o conteudo, o video
+   (width/height:100% + object-fit:cover) sempre preenche o espaco real. */
 .hero--video{
   position:relative; width:100%; overflow:visible;
   display:flex; align-items:flex-end;
@@ -346,7 +351,7 @@ body:has(.sticky-bar){ padding-bottom: 78px; }
   background:#2E1B0D;
 }
 @media (min-width:768px){
-  .hero--video{ min-height:720px; aspect-ratio:1376/768; }
+  .hero--video{ min-height:720px; }
 }
 .hero--video .hero__media{ position:absolute; inset:0; z-index:0; overflow:hidden; }
 .hero--video .hero__media video{
@@ -360,6 +365,7 @@ body:has(.sticky-bar){ padding-bottom: 78px; }
     linear-gradient(to right, rgba(20,12,10,0.55) 0%, rgba(20,12,10,0.1) 55%);
 }
 .hero--video .wrap{ position:relative; z-index:2; }
+.hero--video .urgency{ display:block; width:fit-content; margin-bottom:0.8rem; }
 .hero--video .eyebrow, .hero--video h1, .hero--video .lede, .hero--video .form-note{ color:var(--ivory); }
 .hero--video .eyebrow{ color:var(--gold); }
 .hero--video .lede{ color:rgba(247,243,234,0.82); }
