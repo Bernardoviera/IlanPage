@@ -1,521 +1,215 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Saindo do Zero — Curso de Vinho Para Quem Nunca Teve Coragem de Perguntar | Dýnami Gastronomia</title>
-  <meta name="description" content="Aprenda a escolher, harmonizar e falar sobre vinho com confiança em 4 aulas, sem jargão técnico. Curso &quot;Saindo do Zero&quot; da Dýnami Gastronomia — R$197, garantia de 15 dias.">
-  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
-
-  <!-- Preview de link no Instagram/WhatsApp — principais canais de tráfego do funil (ver docs/09._Canais_e_Distribuicao) -->
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="Saindo do Zero — Curso de Vinho Sem Jargão | Dýnami Gastronomia">
-  <meta property="og:description" content="Aprenda a escolher, harmonizar e falar sobre vinho com confiança em 4 aulas, sem jargão técnico. R$197, garantia de 15 dias.">
-  <meta property="og:image" content="assets/hero-wine-poster.jpg">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Saindo do Zero — Curso de Vinho Sem Jargão | Dýnami Gastronomia">
-  <meta name="twitter:description" content="Aprenda a escolher, harmonizar e falar sobre vinho com confiança em 4 aulas, sem jargão técnico. R$197, garantia de 15 dias.">
-  <meta name="twitter:image" content="assets/hero-wine-poster.jpg">
-  <!-- TODO fundador: og:image/twitter:image usam caminho relativo — troque para URL absoluta (https://seu-dominio/assets/hero-wine-poster.jpg) e adicione <link rel="canonical"> assim que o domínio de produção estiver definido. Crawlers de redes sociais não resolvem caminho relativo. -->
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/styles.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ilan Pacheco — Engenharia, Estratégia, Gastronomia, Performance</title>
+<meta name="description" content="Empresário, estrategista, cozinheiro, triatleta e autor. Portfólio de Ilan Pacheco: Receitas para Engenheiros, Escolhas que Mudam Destinos e Saindo do Zero.">
+<link rel="stylesheet" href="assets/hub-styles.css">
 </head>
 <body>
 
-  <header class="site-header">
-    <div class="container">
-      <span class="wordmark">
-        Dýnami Gastronomia
-        <span class="wordmark__badge">Curso oficial · Saindo do Zero</span>
-      </span>
-    </div>
-  </header>
-
-  <main>
-
-    <!-- 1. Hero -->
-    <section class="hero">
-      <div class="hero__media" aria-hidden="true">
-        <!--
-          A partir de 768px a secao usa aspect-ratio 4/3 (igual ao video,
-          960x720) — a altura passa a acompanhar a largura exatamente na
-          proporcao do video, entao object-fit: cover preenche a secao
-          inteira, de ponta a ponta, sem sobrar nem cortar um pixel. Abaixo
-          de 768px a secao usa uma altura minima fixa (celular na vertical
-          e bem mais estreito que o video, cover corta só as laterais do
-          fundo, nunca a taca/mao).
-        -->
-        <video
-          id="hero-video"
-          poster="assets/hero-wine-poster.jpg"
-          muted
-          loop
-          playsinline
-          preload="auto">
-          <source src="assets/hero-wine.mp4" type="video/mp4">
-        </video>
-        <div class="hero__scrim"></div>
-      </div>
-      <div class="container hero__content">
-        <h1>Ninguém nasce sabendo escolher um vinho. Em 4 aulas, você aprende — sem passar vergonha no caminho.</h1>
-        <p class="hero__subhead">Um curso direto ao ponto para quem já bebe vinho socialmente, mas trava na hora de escolher o rótulo, ler a carta ou dar opinião numa mesa de negócios.</p>
-        <div class="hero__cta-group">
-          <a class="btn btn--primary btn--block" href="#oferta">Quero Aprender Sem Enrolação</a>
-          <span class="hero__guarantee-note">Garantia de 15 dias — sem perguntas</span>
-        </div>
-      </div>
-    </section>
-
-    <!-- 1.5 Transicao de impacto: palavras cadenciadas no scroll -->
-    <section class="cadencia">
-      <h2 class="sr-only">Você vai aprender a escolher, harmonizar, decidir e presentear vinho com confiança.</h2>
-      <span class="cadencia__lead" aria-hidden="true">Você vai aprender a</span>
-      <ul class="cadencia__words" aria-hidden="true">
-        <li>escolher.</li>
-        <li>harmonizar.</li>
-        <li>decidir.</li>
-        <li>presentear.</li>
-      </ul>
-    </section>
-
-    <!-- 2. Problema / Agitação -->
-    <section class="section problema">
-      <div class="container">
-        <span class="section-eyebrow">Você já passou por isso?</span>
-        <p class="lede">Você já esteve numa mesa — de negócios, de família, de um encontro importante — e alguém passou a carta de vinhos pra você decidir. E naquele segundo, travou.</p>
-        <p>Não porque você não gosta de vinho. Porque ninguém nunca te explicou, de um jeito que fizesse sentido, o que aquelas palavras na garrafa realmente significam. Então você faz o que todo mundo faz: pede o segundo mais barato, ou repete o nome que ouviu de alguém, e torce pra ninguém perceber que você não tinha ideia do que estava escolhendo.</p>
-        <p>Isso custa mais do que parece. Custa a confiança de decidir na hora, sem procurar aprovação em quem está do seu lado. Custa a sensação de estar sempre um passo atrás numa conversa que todo mundo ao redor parece dominar.</p>
-        <div class="problema__bridge">
-          <p>O problema nunca foi você. Foi que ninguém nunca te ensinou isso de um jeito que não soasse como aula de sommelier.</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- 3. Solução / Mecanismo -->
-    <section class="section section--alt solucao">
-      <div class="container">
-        <div class="ornament" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.5 6.5L21 9l-5 4.5 1.5 7L12 17l-5.5 3.5 1.5-7L3 9l6.5-.5z"/></svg></div>
-        <div class="solucao__grid">
-          <div>
-            <span class="section-eyebrow">O método</span>
-            <h2>O "Saindo do Zero"</h2>
-            <p class="lede">4 aulas em vídeo, no seu tempo, sem jargão técnico não explicado e sem tom professoral. Cada aula troca teoria por analogia do cotidiano.</p>
-            <p class="solucao__demo">
-              Experimenta: você não precisa saber o que são
-              <span class="termo" tabindex="0" aria-describedby="termo-taninos">taninos<span class="termo__tip" role="tooltip" id="termo-taninos">Substância da casca e da semente da uva que dá aquela sensação de "boca seca" no vinho tinto — quanto mais tanino, mais firme e estruturado ele é.</span></span>
-              nem o que é um vinho
-              <span class="termo" tabindex="0" aria-describedby="termo-encorpado">encorpado<span class="termo__tip" role="tooltip" id="termo-encorpado">Vinho com mais densidade e peso na boca — como leite integral comparado a desnatado. Geralmente tintos mais intensos e maduros.</span></span>
-              antes de começar. A gente te explica no caminho — passa o mouse e confere.
-            </p>
-            <a class="btn btn--secondary" href="#entrega">
-              <span class="btn__label">Ver o Que Está Nas 4 Aulas</span>
-              <span class="btn__reveal" aria-hidden="true">
-                Ver o Que Está Nas 4 Aulas
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-              </span>
-              <span class="btn__dot" aria-hidden="true"></span>
-            </a>
-          </div>
-          <ol class="steps">
-            <li class="steps__item">
-              <span class="steps__number">01</span>
-              <div>
-                <h3>Assista no seu tempo</h3>
-                <p>4 aulas em vídeo, sem data pra terminar — você decide o ritmo.</p>
-              </div>
-            </li>
-            <li class="steps__item">
-              <span class="steps__number">02</span>
-              <div>
-                <h3>Faça o quiz de cada aula</h3>
-                <p>Fixa o que você aprendeu — não pra te testar, pra garantir que ficou.</p>
-              </div>
-            </li>
-            <li class="steps__item">
-              <span class="steps__number">03</span>
-              <div>
-                <h3>Aplique na próxima taça</h3>
-                <p>Confiança prática pra usar em jantares, compras e conversas de negócio.</p>
-              </div>
-            </li>
-          </ol>
-        </div>
-      </div>
-    </section>
-
-    <!-- 3.5 Módulos: syllabus das 4 aulas -->
-    <section class="section modulos">
-      <div class="container">
-        <span class="section-eyebrow">O conteúdo</span>
-        <h2>O que cada aula cobre</h2>
-        <ol class="modulos-grid">
-          <li class="modulo-card">
-            <span class="modulo-card__number">01</span>
-            <h3>Como Escolher e Ler um Vinho Como Quem Entende</h3>
-          </li>
-          <li class="modulo-card">
-            <span class="modulo-card__number">02</span>
-            <h3>Terroir, Castas e Harmonização</h3>
-          </li>
-          <li class="modulo-card">
-            <span class="modulo-card__number">03</span>
-            <h3>Guarda e Compra Inteligente</h3>
-          </li>
-          <li class="modulo-card">
-            <span class="modulo-card__number">04</span>
-            <h3>Erros Comuns, Etiqueta, Degustação e Filosofia Dýnami</h3>
-          </li>
-        </ol>
-      </div>
-    </section>
-
-    <!-- 4. O Que Você Recebe -->
-    <section class="section section--alt" id="entrega">
-      <div class="container">
-        <span class="section-eyebrow">A entrega completa</span>
-        <h2>Tudo incluso, sem letra miúda</h2>
-        <div class="entrega-grid">
-
-          <div class="entrega-card">
-            <span class="entrega-card__number">01</span>
-            <h3>As 4 aulas completas, no seu tempo</h3>
-            <p>É onde a trava desaparece — direto ao ponto, sem enrolação.</p>
-          </div>
-
-          <div class="entrega-card">
-            <span class="entrega-card__number">02</span>
-            <h3>Quiz de fixação ao final de cada aula</h3>
-            <p>Pra garantir que o aprendizado gruda.</p>
-          </div>
-
-          <div class="entrega-card">
-            <span class="entrega-card__number">03</span>
-            <h3>Ficha de degustação e checklist de armazenamento</h3>
-            <p>Ferramentas para download que você usa muito depois do curso acabar.</p>
-          </div>
-
-          <div class="entrega-card">
-            <span class="entrega-card__number">04</span>
-            <h3>Comunidade fechada (WhatsApp/Telegram)</h3>
-            <p>Pra tirar dúvida quando a aula já ficou pra trás.</p>
-          </div>
-
-          <div class="entrega-card">
-            <span class="entrega-card__number">05</span>
-            <h3>Certificado de conclusão</h3>
-            <p>Uma prova concreta de que você aprendeu — compartilhável.</p>
-          </div>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- 5. Resultados (substitui prova social ate haver depoimento real — ver docs/copy-saindo-do-zero.md secao 5) -->
-    <section class="section">
-      <div class="container">
-        <span class="section-eyebrow">O que você vai conseguir fazer</span>
-        <h2>Depois das 4 aulas</h2>
-        <div class="resultados-grid">
-          <div class="resultado-item">
-            <svg class="resultado-item__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>
-            <p>Escolher um rótulo na carta sem esperar a opinião de outra pessoa primeiro.</p>
-          </div>
-          <div class="resultado-item">
-            <svg class="resultado-item__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>
-            <p>Dar uma opinião sobre um vinho numa mesa de negócios sem travar.</p>
-          </div>
-          <div class="resultado-item">
-            <svg class="resultado-item__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>
-            <p>Escolher um vinho de presente com segurança, sem pedir ajuda de última hora.</p>
-          </div>
-          <div class="resultado-item">
-            <svg class="resultado-item__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>
-            <p>Harmonizar vinho e comida de forma simples, entendendo por que a combinação funciona, sem decorar regras complicadas.</p>
-          </div>
-        </div>
-        <!-- TODO fundador: substituir esta seção por depoimentos reais + contador de alunos assim que houver dado verificável. Ver docs/copy-saindo-do-zero.md, seção 5. -->
-      </div>
-    </section>
-
-    <!-- 6. Autoridade — o autor -->
-    <!--
-      TODO fundador: a foto ainda não está salva em assets/. Envie o
-      arquivo (não colado no chat) para eu salvar como
-      assets/autor-ilan-pacheco.jpg e ativar o <img> abaixo — por ora
-      o layout reserva o espaço com .autoridade__photo vazio.
-    -->
-    <section class="section autoridade">
-      <div class="autoridade__rings" aria-hidden="true"></div>
-      <div class="container autoridade__grid">
-        <div class="autoridade__photo">
-          <img src="assets/autor-ilan-pacheco.jpg" alt="Ilan Pacheco, curador da Dýnami Gastronomia e fundador do curso Saindo do Zero" loading="lazy" width="480" height="600">
-        </div>
-        <div class="autoridade__text">
-          <span class="section-eyebrow">Por trás do curso</span>
-          <h2>Ilan Pacheco</h2>
-          <p>Engenheiro, triatleta, cozinheiro e estrategista. Em 2025 assumiu a Farfalle, manufatura de massas artesanais de Jundiaí com mais de 30 anos de história, e hoje é o curador por trás da Dýnami Gastronomia.</p>
-          <p>A mesma lente que aplica à gestão e ao treino ele aplica ao vinho: processo antes de discurso, método antes de jargão. É essa lógica — de quem cura a carta de um restaurante de verdade, todos os dias — que estrutura o "Saindo do Zero".</p>
-          <ul class="autoridade__pillars">
-            <li>Engenheiro</li>
-            <li>Triatleta</li>
-            <li>Cozinheiro</li>
-            <li>Estrategista</li>
-            <li>Enófilo</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <!-- 7. Oferta e Preço -->
-    <section class="section" id="oferta">
-      <div class="container">
-        <div class="ornament" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.5 6.5L21 9l-5 4.5 1.5 7L12 17l-5.5 3.5 1.5-7L3 9l6.5-.5z"/></svg></div>
-        <span class="section-eyebrow">O investimento</span>
-        <h2>Saindo do Zero</h2>
-
-        <div class="oferta-card">
-          <span class="oferta-badge">Sem Enrolação</span>
-          <div class="oferta-price">
-            <span class="oferta-price__old">R$397</span>
-            <span class="oferta-price__new">R$197</span>
-            <span class="oferta-price__installments">ou 12x de R$19,70</span>
-          </div>
-          <p class="oferta-includes">Você leva as 4 aulas + quiz de fixação, ficha de degustação e checklist pra sempre, acesso à comunidade e certificado de conclusão.</p>
-
-          <!-- Garantia posicionada acima do botão de compra (ver docs/offer-saindo-do-zero.md, secao 3.3) -->
-          <div class="garantia">
-            <svg class="garantia__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-            <div>
-              <h3>Garantia Sem Enrolação — 15 dias</h3>
-              <p>Assista as 4 aulas. Se ao final você sentir que não ganhou confiança nenhuma pra escolher, harmonizar ou falar sobre vinho, é só mandar mensagem em até 15 dias após a compra. Devolvemos 100%, sem perguntas.</p>
-            </div>
-          </div>
-
-          <a class="btn btn--primary btn--block" style="margin-top: var(--space-lg);" href="/checkout">Quero Aprender Sem Enrolação</a>
-          <p class="oferta-next-step">Acesso liberado assim que o pagamento é confirmado — você já assiste a primeira aula no mesmo dia.</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- 9. FAQ / Objeções -->
-    <section class="section section--alt">
-      <div class="container">
-        <span class="section-eyebrow">Antes de começar</span>
-        <h2>Perguntas frequentes</h2>
-
-        <details class="faq-item" name="faq-group">
-          <summary>Eu não sei nada de vinho. Isso é pra mim mesmo?
-            <svg class="faq-item__chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
-          </summary>
-          <p>Sim — o curso foi feito exatamente para quem nunca teve aula nenhuma sobre o assunto. Não tem pré-requisito.</p>
-        </details>
-
-        <details class="faq-item" name="faq-group">
-          <summary>Não tenho repertório pra escolher um vinho de R$200+. Isso muda com o curso?
-            <svg class="faq-item__chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
-          </summary>
-          <p>Sim. O curso não te ensina teoria de sommelier — te dá critério prático pra decidir com confiança, em qualquer faixa de preço.</p>
-        </details>
-
-        <details class="faq-item" name="faq-group">
-          <summary>Já tentei aprender sobre vinho antes e não colou.
-            <svg class="faq-item__chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
-          </summary>
-          <p>Provavelmente porque a explicação era técnica demais. Aqui a lógica é o oposto: analogia do cotidiano, sem jargão não explicado.</p>
-        </details>
-
-        <details class="faq-item" name="faq-group">
-          <summary>Não tenho tempo pra curso.
-            <svg class="faq-item__chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
-          </summary>
-          <p>São 4 aulas, no seu tempo, sem data pra terminar. Você assiste quando der.</p>
-        </details>
-
-        <details class="faq-item" name="faq-group">
-          <summary>E se eu comprar e não gostar?
-            <svg class="faq-item__chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
-          </summary>
-          <p>Você tem 15 dias após assistir as 4 aulas pra pedir reembolso total — sem perguntas.</p>
-        </details>
-
-        <details class="faq-item" name="faq-group">
-          <summary>O curso é só teoria ou eu consigo aplicar rápido?
-            <svg class="faq-item__chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
-          </summary>
-          <p>Cada aula fecha com um quiz de fixação e você sai com ficha de degustação e checklist prontos pra usar na próxima vez que for escolher uma garrafa.</p>
-        </details>
-
-        <details class="faq-item" name="faq-group">
-          <summary>O que acontece depois que eu termino as 4 aulas?
-            <svg class="faq-item__chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
-          </summary>
-          <p>Você fica com acesso permanente à comunidade e a todo o material — ficha de degustação, checklist e as 4 aulas — pra consultar sempre que precisar.</p>
-        </details>
-
-      </div>
-    </section>
-
-    <!-- 10. CTA Final -->
-    <section class="section cta-final">
-      <div class="container">
-        <h2>Você não precisa continuar travando na hora de escolher</h2>
-        <p>Em 4 aulas, sem jargão, você sai sabendo decidir com confiança — na próxima mesa, na próxima compra, na próxima conversa.</p>
-        <a class="btn btn--primary" href="/checkout">Quero Aprender Sem Enrolação — R$197</a>
-        <p class="cta-final__reinforcement">Garantia de 15 dias. Se não sentir confiança nenhuma, devolvemos 100%.</p>
-      </div>
-    </section>
-
-  </main>
-
-  <footer class="site-footer">
-    <div class="container">
-      <nav aria-label="Rodapé">
-        <a href="/politica-de-privacidade">Política de Privacidade</a>
-        <a href="/termos-de-compra">Termos de Compra</a>
-      </nav>
-      <small>Dýnami Gastronomia — Jundiaí, SP</small>
-    </div>
-  </footer>
-
-  <!-- Barra de CTA fixa: mantem o botao de compra sempre acessivel ao rolar -->
-  <div class="sticky-cta" id="sticky-cta">
-    <span class="sticky-cta__price">R$197 <span style="font-family: var(--font-body); font-weight: 400; font-size: 13px; color: var(--color-text-secondary);">à vista</span></span>
-    <a class="btn btn--primary" href="#oferta">Quero Aprender</a>
+<header class="site-header">
+  <div class="wrap">
+    <a href="index.html" class="wordmark">Ilan <span>Pacheco</span></a>
+    <button class="nav-toggle" aria-label="Abrir menu" aria-expanded="false"><span></span></button>
+    <nav class="main-nav">
+      <a href="index.html" class="active">Início</a>
+      <a href="sobre.html">Sobre</a>
+      <a href="receitas-para-engenheiros.html">Receitas para Engenheiros</a>
+      <a href="escolhas-que-mudam-destinos.html">Escolhas que Mudam Destinos</a>
+      <a href="saindo-do-zero.html">Saindo do Zero</a>
+      <a href="contato.html" class="btn outline" style="padding:0.6em 1.3em;">Contato</a>
+    </nav>
   </div>
+</header>
 
-  <script>
-    // Video de fundo do hero (2 camadas: borrada + nitida) toca em qualquer
-    // tela, exceto se o usuario pediu movimento reduzido (nesse caso fica
-    // só o poster da camada nitida, parado).
-    const heroVideos = document.querySelectorAll('.hero__media video');
-    const reducedMotionQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
+<main>
 
-    const syncHeroVideo = () => {
-      heroVideos.forEach((v) => {
-        if (!reducedMotionQuery.matches) {
-          v.play().catch(() => {}); // autoplay pode ser bloqueado; poster cobre esse caso na camada nitida
-        } else {
-          v.pause();
-        }
-      });
-    };
-    syncHeroVideo();
-    reducedMotionQuery.addEventListener('change', syncHeroVideo);
+  <!-- HERO -->
+  <section class="hero">
+    <div class="wrap">
+      <span class="eyebrow">Engenheiro · Empresário · Cozinheiro · Triatleta · Autor</span>
+      <h1>Da engenharia à mesa.<br>Da queda ao método.</h1>
+      <p class="lede">Quinze anos construindo uma engenharia. Uma aquisição feita por paixão. Uma queda que custou dinheiro, casamento e certeza. E, na reconstrução, um método — testado no corpo, na cozinha e nos negócios antes de virar palavra escrita.</p>
+      <div style="display:flex; gap:1rem; flex-wrap:wrap; margin-top:2rem;">
+        <a href="sobre.html" class="btn">Conhecer a trajetória</a>
+        <a href="#projetos" class="btn outline">Ver os projetos</a>
+      </div>
+    </div>
+  </section>
 
-    // Mostra a barra de CTA fixa depois que o hero sai de vista, esconde perto do CTA final
-    const stickyCta = document.getElementById('sticky-cta');
-    const heroSection = document.querySelector('.hero');
-    const finalCtaSection = document.querySelector('.cta-final');
-    let heroPassed = false;
-    let nearFinalCta = false;
+  <hr class="hairline">
 
-    const updateStickyVisibility = () => {
-      stickyCta.classList.toggle('is-visible', heroPassed && !nearFinalCta);
-    };
+  <!-- PILARES -->
+  <section class="section pillars">
+    <div class="wrap">
+      <span class="eyebrow reveal">Cinco frentes, uma trajetória</span>
+      <h2 class="reveal" style="max-width:22ch;">Nenhuma dessas frentes existe isolada das outras.</h2>
 
-    if ('IntersectionObserver' in window) {
-      new IntersectionObserver(([entry]) => {
-        heroPassed = !entry.isIntersecting && entry.boundingClientRect.top < 0;
-        updateStickyVisibility();
-      }, { threshold: 0 }).observe(heroSection);
+      <div class="pillar-row reveal">
+        <span class="pillar-num">I</span>
+        <div class="pillar-body">
+          <h3>Empresário</h3>
+          <p>Quinze anos à frente da ICS Engenharia, até a decisão — tomada em um momento de ruptura pessoal — de vender sua participação. Em 2025, assumiu a Farfalle, fabricante artesanal de massas com mais de 30 anos de história em Jundiaí, e fundou a Dýnami Gastronomia.</p>
+        </div>
+      </div>
+      <div class="pillar-row reveal">
+        <span class="pillar-num">II</span>
+        <div class="pillar-body">
+          <h3>Estrategista</h3>
+          <p>Visão sistêmica aplicada a crescimento, posicionamento e estruturação de negócios reais — não teoria de palco, mas decisões tomadas sob risco, prazo e capital próprio.</p>
+        </div>
+      </div>
+      <div class="pillar-row reveal">
+        <span class="pillar-num">III</span>
+        <div class="pillar-body">
+          <h3>Cozinheiro</h3>
+          <p>Formação em gastronomia profissional pelo Le Cordon Bleu São Paulo. A cozinha como sistema: precisão, sensibilidade, mise en place — disciplina que se prova todos os dias, prato a prato.</p>
+        </div>
+      </div>
+      <div class="pillar-row reveal">
+        <span class="pillar-num">IV</span>
+        <div class="pillar-body">
+          <h3>Triatleta</h3>
+          <p>Finisher Ironman 70.3. A endurance como espelho: gestão de energia, consistência e recuperação sob pressão — os mesmos princípios que sustentam uma empresa sustentam um corpo em prova.</p>
+        </div>
+      </div>
+      <div class="pillar-row reveal">
+        <span class="pillar-num">V</span>
+        <div class="pillar-body">
+          <h3>Autor</h3>
+          <p>Duas obras, dois públicos, uma mesma tese: a ordem em que se constrói importa mais do que a intensidade do esforço. <span class="small-caps">Receitas para Engenheiros</span> e <span class="small-caps">Escolhas que Mudam Destinos</span> — lançamento em setembro de 2026.</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-      new IntersectionObserver(([entry]) => {
-        nearFinalCta = entry.isIntersecting;
-        updateStickyVisibility();
-      }, { threshold: 0 }).observe(finalCtaSection);
-    }
+  <!-- PROJETOS -->
+  <section class="section dark" id="projetos">
+    <div class="wrap">
+      <span class="eyebrow reveal">Os projetos</span>
+      <h2 class="reveal" style="max-width:26ch;">Três frentes, três públicos, três vozes — e um único ponto de origem.</h2>
+      <p class="reveal" style="max-width:60ch; margin-bottom:3rem;">Cada projeto fala com quem precisa ouvir aquilo, do jeito certo para quem ouve. Nenhum deles é uma versão do outro.</p>
 
-    // FAQ: o <details> nativo abre/fecha na hora, sem nenhuma animacao —
-    // essa classe anima a altura de verdade via Web Animations API,
-    // mantendo o <details>/<summary> para semantica e teclado. Sem
-    // prefers-reduced-motion, deixa o comportamento nativo (instantaneo).
-    if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-      const faqInstances = [];
-      class FaqAccordion {
-        constructor(el) {
-          this.details = el;
-          this.summary = el.querySelector('summary');
-          this.content = el.querySelector('p');
-          this.animation = null;
-          this.isClosing = false;
-          this.isExpanding = false;
-          this.summary.addEventListener('click', (e) => this.onClick(e));
-          faqInstances.push(this);
-        }
-        onClick(e) {
-          e.preventDefault();
-          this.details.style.overflow = 'hidden';
-          if (this.isClosing || !this.details.open) {
-            // Sanfona de verdade: só uma resposta aberta por vez —
-            // fecha qualquer outra que esteja aberta ou abrindo.
-            faqInstances.forEach((other) => {
-              if (other !== this && (other.details.open || other.isExpanding)) {
-                other.shrink();
-              }
-            });
-            this.open();
-          } else if (this.isExpanding || this.details.open) {
-            this.shrink();
-          }
-        }
-        shrink() {
-          this.isClosing = true;
-          const startHeight = `${this.details.offsetHeight}px`;
-          const endHeight = `${this.summary.offsetHeight}px`;
-          if (this.animation) this.animation.cancel();
-          this.animation = this.details.animate(
-            { height: [startHeight, endHeight] },
-            { duration: 250, easing: 'ease-out' }
-          );
-          this.animation.onfinish = () => this.onAnimationFinish(false);
-          this.animation.oncancel = () => { this.isClosing = false; };
-        }
-        open() {
-          this.details.style.height = `${this.details.offsetHeight}px`;
-          this.details.open = true;
-          window.requestAnimationFrame(() => this.expand());
-        }
-        expand() {
-          this.isExpanding = true;
-          const startHeight = `${this.details.offsetHeight}px`;
-          const endHeight = `${this.summary.offsetHeight + this.content.offsetHeight}px`;
-          if (this.animation) this.animation.cancel();
-          this.animation = this.details.animate(
-            { height: [startHeight, endHeight] },
-            { duration: 250, easing: 'ease-out' }
-          );
-          this.animation.onfinish = () => this.onAnimationFinish(true);
-          this.animation.oncancel = () => { this.isExpanding = false; };
-        }
-        onAnimationFinish(open) {
-          this.details.open = open;
-          this.animation = null;
-          this.isClosing = false;
-          this.isExpanding = false;
-          this.details.style.height = this.details.style.overflow = '';
-        }
+      <div class="grid grid-3">
+        <a href="receitas-para-engenheiros.html" class="card reveal" style="background:rgba(247,243,234,0.05); border-color:rgba(247,243,234,0.14);">
+          <span class="eyebrow">B2B · Executivos e empresários</span>
+          <h3 style="color:var(--ivory);">Receitas para Engenheiros</h3>
+          <p style="color:rgba(247,243,234,0.7);">Livro, palestras corporativas e Programa de Liderança para quem trata a empresa como sistema — não como sorte.</p>
+          <div class="card-foot">Solicitar proposta <span>→</span></div>
+        </a>
+
+        <a href="escolhas-que-mudam-destinos.html" class="card reveal" style="background:rgba(247,243,234,0.05); border-color:rgba(247,243,234,0.14);">
+          <span class="eyebrow">B2C · Reconstrução pessoal</span>
+          <h3 style="color:var(--ivory);">Escolhas que Mudam Destinos</h3>
+          <p style="color:rgba(247,243,234,0.7);">Livro e cohort de dez semanas sobre os cinco pilares, na ordem certa — para quem está reconstruindo depois da queda.</p>
+          <div class="card-foot">Entrar na turma fundadora <span>→</span></div>
+        </a>
+
+        <a href="saindo-do-zero.html" class="card reveal" style="background:rgba(247,243,234,0.05); border-color:rgba(247,243,234,0.14);">
+          <span class="eyebrow">Curso · Vinhos · R$ 197</span>
+          <h3 style="color:var(--ivory);">Saindo do Zero</h3>
+          <p style="color:rgba(247,243,234,0.7);">Vinho como disciplina, identidade e experiência — um caminho estruturado para quem quer começar a entender vinho de verdade.</p>
+          <div class="card-foot">Quero aprender sem enrolação <span>→</span></div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- OUTRAS FRENTES -->
+  <section class="section-tight">
+    <div class="wrap">
+      <span class="eyebrow reveal">Outras construções</span>
+      <div class="grid grid-2" style="margin-top:1.5rem;">
+        <div class="reveal" style="padding:2rem 0; border-top:1px solid var(--line);">
+          <h3>Dýnami Gastronomia</h3>
+          <p>Experiência gastronômica e ecossistema de lifestyle — onde esporte, vinho e gastronomia se encontram em uma mesma narrativa de performance. Sede em Jundiaí, SP.</p>
+        </div>
+        <div class="reveal" style="padding:2rem 0; border-top:1px solid var(--line);">
+          <h3>Farfalle</h3>
+          <p>Fabricante artesanal de massas com mais de 30 anos de história em Jundiaí, assumida por Ilan em 2025 e hoje em reposicionamento premium — tradição artesanal e inteligência industrial, com foco em inovação e alimentos funcionais.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA FINAL -->
+  <section class="section" style="text-align:center; border-top:1px solid var(--line);">
+    <div class="wrap">
+      <span class="eyebrow reveal">Setembro de 2026</span>
+      <h2 class="reveal" style="max-width:20ch; margin:0 auto 1.5rem;">Os dois livros chegam juntos. Seja avisado primeiro.</h2>
+      <a href="contato.html" class="btn reveal">Quero ser avisado no lançamento</a>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <a href="index.html" class="wordmark">Ilan Pacheco</a>
+        <p style="margin-top:1rem; max-width:36ch; color:rgba(247,243,234,0.55); font-size:0.9rem;">Engenheiro, estrategista, cozinheiro, triatleta e autor. Construindo valor através de repertório.</p>
+      </div>
+      <div>
+        <h4>Projetos</h4>
+        <ul class="footer-links">
+          <li><a href="receitas-para-engenheiros.html">Receitas para Engenheiros</a></li>
+          <li><a href="escolhas-que-mudam-destinos.html">Escolhas que Mudam Destinos</a></li>
+          <li><a href="saindo-do-zero.html">Saindo do Zero</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contato</h4>
+        <ul class="footer-links">
+          <li><a href="mailto:ilan@ilanpacheco.com.br">ilan@ilanpacheco.com.br</a></li>
+          <li><a href="https://www.instagram.com/ilanpacheco" target="_blank" rel="noopener">Instagram</a></li>
+          <li><a href="https://www.linkedin.com/in/ilanpacheco" target="_blank" rel="noopener">LinkedIn</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Ilan Pacheco. Todos os direitos reservados.</span>
+      <span>ilanpacheco.com.br</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const toggle = document.querySelector('.nav-toggle');
+  const nav = document.querySelector('.main-nav');
+  if (toggle && nav) {
+    toggle.addEventListener('click', () => {
+      nav.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', nav.classList.contains('open'));
+    });
+    nav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => nav.classList.remove('open')));
+  }
+
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('is-visible');
+        io.unobserve(e.target);
       }
-      document.querySelectorAll('.faq-item').forEach((el) => new FaqAccordion(el));
-    }
-
-    // Tooltip de termo (glossario de vinho): :hover/:focus ja cobrem mouse e
-    // teclado, mas foco por toque em <span> e pouco confiavel no iOS Safari —
-    // reforca com clique/toque explicito, fechando ao tocar fora.
-    document.querySelectorAll('.termo').forEach((termo) => {
-      termo.addEventListener('click', (e) => {
-        e.stopPropagation();
-        const wasOpen = termo.classList.contains('is-open');
-        document.querySelectorAll('.termo.is-open').forEach((t) => t.classList.remove('is-open'));
-        if (!wasOpen) termo.classList.add('is-open');
-      });
     });
-    document.addEventListener('click', () => {
-      document.querySelectorAll('.termo.is-open').forEach((t) => t.classList.remove('is-open'));
-    });
-  </script>
+  }, { threshold: 0.15 });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
 
+  const stickyBar = document.querySelector('.sticky-bar');
+  if (stickyBar) {
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 600) {
+        stickyBar.classList.add('show');
+      } else {
+        stickyBar.classList.remove('show');
+      }
+    });
+  }
+});
+
+</script>
 </body>
 </html>
