@@ -18,6 +18,31 @@
 <!-- TODO fundador: trocar og:image/twitter:image para URL absoluta assim que o domínio de produção (ilanpacheco.com.br) estiver no ar, e adicionar <link rel="canonical">. -->
 
 <link rel="stylesheet" href="assets/hub-styles.css">
+
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1764040014725240');
+fbq('track', 'PageView');
+fbq('track', 'ViewContent', {
+  content_name: 'Saindo do Zero',
+  content_type: 'product',
+  value: 197.00,
+  currency: 'BRL'
+});
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=1764040014725240&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
+
 </head>
 <body class="theme-vinho">
 
@@ -147,7 +172,7 @@
         <p style="margin:0; font-size:0.92rem; color:rgba(247,243,234,0.75);">Assista as 4 aulas. Se ao final você sentir que não ganhou confiança nenhuma pra escolher, harmonizar ou falar sobre vinho, é só mandar mensagem em até 15 dias após a compra. Devolvemos 100%, sem perguntas.</p>
       </div>
 
-      <a href="/checkout" class="btn gold reveal" style="font-size:1rem; padding:1.1em 2.4em;">Quero Aprender Sem Enrolação</a>
+      <a href="https://pay.kiwify.com.br/m2kqddE" class="btn gold reveal checkout-cta" style="font-size:1rem; padding:1.1em 2.4em;">Quero Aprender Sem Enrolação</a>
       <p class="form-note reveal" style="margin-top:1.2rem;">Acesso liberado assim que o pagamento é confirmado — você já assiste a primeira aula no mesmo dia.</p>
     </div>
   </section>
@@ -320,7 +345,7 @@
     <div class="wrap">
       <h2 style="margin-bottom:0.6rem;">Você não precisa continuar travando na hora de escolher.</h2>
       <p style="margin-bottom:1.6rem;">Em 4 aulas, sem jargão, você sai sabendo decidir com confiança — na próxima mesa, na próxima compra, na próxima conversa.</p>
-      <a href="/checkout" class="btn">Quero Aprender Sem Enrolação — R$197</a>
+      <a href="https://pay.kiwify.com.br/m2kqddE" class="btn checkout-cta">Quero Aprender Sem Enrolação — R$197</a>
       <p style="margin-top:1rem; font-size:0.85rem;">Garantia de 15 dias. Se não sentir confiança nenhuma, devolvemos 100%.</p>
     </div>
   </div>
@@ -328,7 +353,7 @@
   <!-- STICKY BAR -->
   <div class="sticky-bar" id="sticky-cta">
     <span class="price">R$ 197 <span style="font-size:0.75rem; font-weight:400; opacity:0.7;">à vista</span></span>
-    <a href="/checkout" class="btn gold">Quero Aprender</a>
+    <a href="https://pay.kiwify.com.br/m2kqddE" class="btn gold checkout-cta">Quero Aprender</a>
   </div>
 </main>
 
@@ -373,6 +398,21 @@ document.addEventListener('DOMContentLoaded', () => {
     });
     nav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => nav.classList.remove('open')));
   }
+
+  // Pixel: dispara InitiateCheckout ao clicar em qualquer CTA de compra,
+  // antes de sair pro checkout externo do Kiwify.
+  document.querySelectorAll('.checkout-cta').forEach((cta) => {
+    cta.addEventListener('click', () => {
+      if (typeof fbq === 'function') {
+        fbq('track', 'InitiateCheckout', {
+          content_name: 'Saindo do Zero',
+          content_type: 'product',
+          value: 197.00,
+          currency: 'BRL'
+        });
+      }
+    });
+  });
 
   const reducedMotionQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
 
