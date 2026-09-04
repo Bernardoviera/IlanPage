@@ -53,9 +53,18 @@ src="https://www.facebook.com/tr?id=1764040014725240&ev=PageView&noscript=1"
     <nav class="main-nav">
       <a href="index.html">Início</a>
       <a href="sobre.html">Sobre</a>
-      <a href="receitas-para-engenheiros.html">Receitas para Engenheiros</a>
-      <a href="escolhas-que-mudam-destinos.html">Escolhas que Mudam Destinos</a>
-      <a href="saindo-do-zero.html" class="active">Saindo do Zero</a>
+      <div class="nav-dropdown" id="nav-projetos">
+        <button type="button" class="nav-dropdown__toggle active" aria-haspopup="true" aria-expanded="false">
+          Projetos
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="nav-dropdown__menu">
+          <a href="receitas-para-engenheiros.html">Receitas para Engenheiros</a>
+          <a href="escolhas-que-mudam-destinos.html">Escolhas que Mudam Destinos</a>
+          <a href="saindo-do-zero.html" class="active">Saindo do Zero</a>
+          <a href="https://ilanpacheco.lojavirtualnuvem.com.br/" target="_blank" rel="noopener">Loja ↗</a>
+        </div>
+      </div>
       <a href="contato.html" class="btn outline" style="padding:0.6em 1.3em;">Contato</a>
     </nav>
   </div>
@@ -370,6 +379,7 @@ src="https://www.facebook.com/tr?id=1764040014725240&ev=PageView&noscript=1"
           <li><a href="receitas-para-engenheiros.html">Receitas para Engenheiros</a></li>
           <li><a href="escolhas-que-mudam-destinos.html">Escolhas que Mudam Destinos</a></li>
           <li><a href="saindo-do-zero.html">Saindo do Zero</a></li>
+          <li><a href="https://ilanpacheco.lojavirtualnuvem.com.br/" target="_blank" rel="noopener">Loja</a></li>
         </ul>
       </div>
       <div>
@@ -397,6 +407,30 @@ document.addEventListener('DOMContentLoaded', () => {
       toggle.setAttribute('aria-expanded', nav.classList.contains('open'));
     });
     nav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => nav.classList.remove('open')));
+  }
+
+  // Menu suspenso "Projetos"
+  const navDropdown = document.getElementById('nav-projetos');
+  if (navDropdown) {
+    const ddToggle = navDropdown.querySelector('.nav-dropdown__toggle');
+    const closeDropdown = () => {
+      navDropdown.classList.remove('open');
+      ddToggle.setAttribute('aria-expanded', 'false');
+    };
+    ddToggle.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const isOpen = navDropdown.classList.toggle('open');
+      ddToggle.setAttribute('aria-expanded', String(isOpen));
+    });
+    navDropdown.querySelectorAll('.nav-dropdown__menu a').forEach(a => {
+      a.addEventListener('click', closeDropdown);
+    });
+    document.addEventListener('click', (e) => {
+      if (!navDropdown.contains(e.target)) closeDropdown();
+    });
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeDropdown();
+    });
   }
 
   // Pixel: dispara InitiateCheckout ao clicar em qualquer CTA de compra,

@@ -112,6 +112,43 @@ nav.main-nav a.active::after{
 .nav-toggle span, .nav-toggle span::before, .nav-toggle span::after{
   content:''; display:block; width:18px; height:1px; background:var(--ink); position:relative; transition:.25s;
 }
+
+/* Menu "Projetos" -------------------------------------------------------- */
+.nav-dropdown{ position:relative; }
+.nav-dropdown__toggle{
+  font-family:var(--body); background:none; border:0; cursor:pointer;
+  font-size:0.86rem; letter-spacing:0.04em; font-weight:500; color:var(--ink-soft);
+  display:inline-flex; align-items:center; gap:0.35em; padding:0 0 4px; position:relative;
+}
+.nav-dropdown__toggle:hover, .nav-dropdown__toggle.active{ color:var(--ink); }
+.nav-dropdown__toggle.active::after{
+  content:''; position:absolute; left:0; right:0; bottom:-2px; height:1px; background:var(--gold);
+}
+.nav-dropdown__toggle svg{ width:11px; height:11px; transition:transform .2s ease; }
+.nav-dropdown.open .nav-dropdown__toggle svg{ transform:rotate(180deg); }
+.nav-dropdown__menu{
+  position:absolute; top:calc(100% + 14px); left:50%; transform:translateX(-50%);
+  background:var(--ivory); border:1px solid var(--line); min-width:240px;
+  box-shadow:0 12px 32px rgba(23,22,15,0.1);
+  display:flex; flex-direction:column; padding:0.5rem 0;
+  opacity:0; visibility:hidden; transition:opacity .2s ease;
+  z-index:60;
+}
+.nav-dropdown.open .nav-dropdown__menu{ opacity:1; visibility:visible; }
+.nav-dropdown__menu a{
+  padding:0.7em 1.2em; font-size:0.86rem; color:var(--ink-soft); white-space:nowrap;
+}
+.nav-dropdown__menu a:hover, .nav-dropdown__menu a.active{ color:var(--ink); background:var(--ivory-deep); }
+@media (max-width: 900px){
+  .nav-dropdown__toggle{ font-size:1.1rem; }
+  .nav-dropdown__menu{
+    position:static; transform:none; opacity:1; visibility:visible; box-shadow:none;
+    border:0; background:none; padding:0.8rem 0 0 1rem; min-width:0;
+    display:none;
+  }
+  .nav-dropdown.open .nav-dropdown__menu{ display:flex; }
+  .nav-dropdown__menu a{ padding:0.6em 0; font-size:1rem; }
+}
 .nav-toggle span::before{ position:absolute; top:-6px; width:18px; }
 .nav-toggle span::after{ position:absolute; top:6px; width:18px; }
 
